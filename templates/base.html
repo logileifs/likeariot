@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="{{ LANGUAGE_CODE }}"{% if LANGUAGE_BIDI %} dir="rtl"{% endif %}>
+<!--<![endif]-->
+{% load pages_tags mezzanine_tags i18n staticfiles %}
+
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>Your Page Title Here :)</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" type='text/css' href="{% static "css/reset.css" %}">
+	<link rel="stylesheet" type='text/css' href="{% static "css/grid.css" %}">
+	<link rel="stylesheet" type='text/css' href="{% static "css/layout.css" %}">
+	<link rel="stylesheet" type='text/css' href="{% static "css/owl.carousel.css" %}">
+	<link rel="stylesheet" type='text/css' href="{% static "css/font-awesome.min.css" %}">
+	<link rel="stylesheet" type='text/css' href="{% static "css/swipebox.css" %}">
+
+	<link href='http://fonts.googleapis.com/css?family=Merriweather:400,700italic,400italic,300,900,900italic,700,300italic' rel='stylesheet' type='text/css'>
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!-- Favicons
+	================================================== -->
+	<link rel="shortcut icon" href="static/images/favicon.ico">
+
+</head>
+<body>
+
+	<!-- Main Container -->
+	<div class="main__container">
+
+		<!-- Mobile Menu-->
+		<div class="mobile-menu__wrap">
+			<nav class="mobile-menu__nav">
+				<div class="icon-list">
+					<div class="mobile-menu__search">
+						<input id="mobile-search" type="search" placeholder="Search...">
+					</div>
+					<ul class="mobile-menu__list">
+						<li class="submenu-link"><a class="arrow" href="index.html">Home</a>
+							<!-- Submenu-->
+							<ul>
+								<li><a href="index.html">Carousel</a></li>
+								<li><a href="index-slider.html">Slider</a></li>
+								<li><a href="index-animations.html">Scroll Animations</a></li>
+								<li><a href="index-sidebar.html">Sidebar</a></li>
+							</ul>
+						</li>
+						<li class="submenu-link"><a class="arrow" href="#">Post Types</a>
+							<!-- Submenu-->
+							<ul>
+								<li><a href="single.html">Default</a></li>
+								<li><a href="single-sidebar.html">Sidebar</a></li>
+								<li><a href="single-fullscreen.html">Fullscreen Parallax</a></li>
+								<li><a href="single-video.html">Video Post</a></li>
+								<li><a href="single-gallery.html">Gallery Post</a></li>
+								<li><a href="single-audio.html">Audio Post</a></li>
+							</ul>
+						</li>
+						<li class="submenu-link"><a class="arrow" href="#">Features</a>
+							<!-- Submenu-->
+							<ul>
+								<li><a href="grid.html">Grid</a></li>
+								<li><a href="typography.html">Typography</a></li>
+								<li><a href="elements.html">Elements</a></li>
+							</ul>
+						</li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="index.html">Cooking</a></li>
+						<li><a href="index.html">Photography</a></li>
+						<li><a href="contact.html">Contact</a></li>
+					</ul>
+				</div>
+			</nav>
+			<button class="close-button" id="close-button"></button>
+		</div> 
+		<button class="menu-button" id="open-button">Open Menu</button>
+
+
+		<div class="content-wrap">
+			<div class="content">
+
+				<!-- Header Container -->
+				<header class="main-header">
+
+			   		<!-- Top head container -->
+					<div class="main-header__top">
+						<div class="container">
+							<div class="eight columns">
+
+								<!-- Search Form -->
+								<div class="main-header__search">
+									<input id="header-search" type="search" placeholder="Search">
+								</div>
+							</div>
+							<div class="eight columns">
+
+								<!-- Social Links -->
+								<div class="main-header__social">
+									<ul class="main-header__social-links">
+										<li><a href="https://www.facebook.com/LikeRiot"><i class="fa fa-facebook"></i></a></li>
+										<li><a href="https://www.instagram.com/wearelikeariot/"><i class="fa fa-instagram"></i></a></li>
+										<li><a href="http://www.bloglovin.com/blog/11173263/like-a-riot-fashion-amp-travel-blog"><i class="fa fa-heart"></i></a></li>
+										<!--<li><a href="#"><i class="fa fa-behance"></i></a></li>
+										<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+										<li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+										<li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
+										<li><a href="https://twitter.com/LikeRiots"><i class="fa fa-twitter"></i></a></li>
+										<li><a href="mailto:cooperations@likeariot.com"><i class="fa fa-envelope"></i></a></li>
+										<li><a href="feed://likeariot.com/feed/"><i class="fa fa-rss"></i></a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Logo in header container -->
+					<div class="main-header__logo">
+						<div class="container">
+							<div class="sixteen columns">
+
+								<!-- Logo Link and Image -->
+								<a class="header__logo" href="index.html">
+									<!--<img src="static/images/header.jpg" alt="Vanilia - blogging wordpress theme." />-->
+									<img src="http://likeariot.com/wp-content/uploads/cropped-test2-1-1.jpg" alt="Vanilia - blogging wordpress theme." />
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Featured Posts Slider -->
+					<section class="slider">
+
+						<figure class="slider__item">
+							<img class="lazyOwl" data-src="http://likeariot.com/wp-content/uploads/1-58.jpg" src="http://likeariot.com/wp-content/uploads/1-58.jpg" alt="" />
+							<figcaption class="slide__caption">
+								<p>recipes</p>
+								<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
+								<a class="slider__button" href="#">read</a>
+							</figcaption>
+						</figure>
+
+						<figure class="slider__item">
+							<img class="lazyOwl" data-src="http://likeariot.com/wp-content/uploads/2-20.jpg" src="http://likeariot.com/wp-content/uploads/2-20.jpg" alt="" />
+							<figcaption class="slide__caption">
+								<p>recipes</p>
+								<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
+								<a class="slider__button" href="#">read</a>
+							</figcaption>
+						</figure>
+
+						<figure class="slider__item">
+							<img class="lazyOwl" data-src="http://likeariot.com/wp-content/uploads/1-26.png" src="http://likeariot.com/wp-content/uploads/1-26.png" alt="" />
+							<figcaption class="slide__caption">
+								<p>recipes</p>
+								<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
+								<a class="slider__button" href="#">read</a>
+							</figcaption>
+						</figure>
+
+						<!--
+						<figure class="slider__item">
+							<img class="lazyOwl" data-src="static/images/slider3.jpg" src="static/images/slider3.jpg" alt="" />
+							<figcaption class="slide__caption">
+								<p>recipes</p>
+								<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
+								<a class="slider__button" href="#">read</a>
+							</figcaption>
+						</figure>
+
+						<figure class="slider__item">
+							<img class="lazyOwl" data-src="static/images/slider2.jpg" src="static/images/slider2.jpg" alt="" />
+							<figcaption class="slide__caption">
+								<p>recipes</p>
+								<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
+								<a class="slider__button" href="#">read</a>
+							</figcaption>
+						</figure>
+						-->
+
+					</section>
+
+					<!-- Navigation menu container -->
+					<div class="main-header__navigation" id="sticky">
+						<div class="container">
+							<div class="sixteen columns">
+					
+								<!-- Navigation List -->
+								<div class="table">
+									<ul class="navigation__list">
+										<li><a href="index.html">Home</a>
+											<!-- Submenu-->
+											<!--<ul>
+												<li><a href="index.html">Carousel</a></li>
+												<li><a href="index-slider.html">Slider</a></li>
+												<li><a href="index-animations.html">Scroll Animations</a></li>
+												<li><a href="index-sidebar.html">Sidebar</a></li>
+											</ul>-->
+										</li>
+										<li class="submenu-link"><a class="arrow" href="">Lifestyle</a>
+											<!-- Submenu-->
+											<ul>
+												<li><a href="index.html">Thoughts</a></li>
+												<li><a href="index-slider.html">Festivals</a></li>
+												<li><a href="index-animations.html">Interior</a></li>
+												<li><a href="index-sidebar.html">DIY</a></li>
+												<li><a href="index-sidebar.html">Beauty</a></li>
+												<li><a href="index-sidebar.html">Food</a></li>
+											</ul>
+										</li>
+										<li class="submenu-link"><a class="arrow" href="#">Wanderlust</a>
+											<!-- Submenu-->
+											<ul>
+												<li><a href="single.html">INSERT WORLD MAP HERE</a></li>
+												<!--<li><a href="single-sidebar.html">Sidebar</a></li>
+												<li><a href="single-fullscreen.html">Fullscreen Parallax</a></li>
+												<li><a href="single-video.html">Video Post</a></li>
+												<li><a href="single-gallery.html">Gallery Post</a></li>
+												<li><a href="single-audio.html">Audio Post</a></li>-->
+											</ul>
+										</li>
+										<li class="submenu-link"><a class="arrow" href="#">Fashion</a>
+											<!-- Submenu-->
+											<ul>
+												<li><a href="grid.html">Everyday Looks</a></li>
+												<li><a href="typography.html">Outdoor Looks</a></li>
+												<li><a href="elements.html">Retro Looks</a></li>
+												<li><a href="elements.html">Linda</a></li>
+												<li><a href="elements.html">Caro</a></li>
+											</ul>
+										</li>
+										<!--<li><a href="about.html">About</a></li>
+										<li><a href="index.html">Cooking</a></li>
+										<li><a href="index.html">Photography</a></li>-->
+									<!--</ul>
+									<ul class="navigation__list2">-->
+										<li>
+											<a href="contact.html"><i class="fa fa-globe"></i>
+											Current Location: Reykjavík, Iceland
+											</a>
+										</li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+
+				</header>
+
+
+				<!-- Main Content ( list of posts ) 
+				=================================== -->
+				<section class="main-content">
+
+					<div class="container">
+
+						<div class="sixteen columns">
+
+							{% block main %}{% endblock %}
+
+							<!-- Homepage Post -->
+<!--							<article class="main-content__post scrollme">-->
+
+								<!-- Post image -->
+<!--
+								<a href="http://likeariot.com/wp-content/uploads/2015-10-011.jpg" class="swipebox"><img src="http://likeariot.com/wp-content/uploads/2015-10-011.jpg" alt="At the Office of the King's Attorney." /></a>
+-->							
+								<!-- Post header -->
+<!--
+								<header class="post__header">
+									<time class="post__time" datetime="2014-10-17"><span class="time_large">17<sup>th</sup></span> October</time>
+									<p class="post__meta">Posted by <a href="about.html">Lorene</a> in <a href="#">Story</a></p>
+									<h2 class="post__title"><a href="single.html">At the Office of the King's Attorney.</a></h2>
+								</header>
+
+								<div class="post__content">
+									<p class="post__excerpt">The Young Amelia was first at the rendezvous. In spite of his usual command over himself, Dantes could not restrain his impetuosity. He was the first to jump on shore; and had he dared, he would, like Lucius Brutus, have "kissed his mother earth."</p>
+								</div>
+
+								<div class="post__button">
+									<a class="btn" href="single.html">read</a>
+								</div>
+-->
+<!--							</article>-->
+							<!-- / Post -->
+
+						</div>
+
+					</div><!-- / Container -->
+
+				</section><!-- / Main Content -->
+
+
+				<!-- Prev / Next Page -->
+				<section class="pagination">
+
+					<div class="container">
+
+						<div class="ten columns offset-by-three">
+
+							<!-- Prev -->
+							<a class="pagination__prev" href="#"><i class="fa fa-arrow-circle-left"></i> Older Posts</a>
+
+							<!-- Numbers -->
+							<ul class="pagination__numbers">
+								<li><a class="pagination--active" href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+							</ul>
+
+							<!-- Next -->
+							<a class="pagination__next" href="#">Newer Posts <i class="fa fa-arrow-circle-right"></i> </a>
+
+						</div>
+
+					</div>
+
+				</section>
+
+				<!-- Twitter feed slider -->
+				<section class="twitter-feed">
+
+					<!-- Single Tweet -->
+					<article class="tweet">
+
+						<div class="container">
+
+							<div class="ten columns offset-by-three">
+
+								<!-- head of tweet -->
+								<header class="tweet__header">
+
+									<!-- Tweet author photo -->
+									<div class="tweet__avatar">
+										<img src="static/images/twitter_avatar.jpg" alt="" />
+									</div>
+
+									<!-- Tweet author name and nickname -->
+									<a href="#" class="tweet__author">John Doe<span class="tweet__nick">@johnydoesit</span></a>
+
+									<div class="tweet__separator">
+										<i class="fa fa-twitter"></i>
+									</div>
+
+								</header>
+
+								<blockquote class="tweet__content">
+									<p>New <a href="#">#EnvatoStories</a>: We meet Elite author Andy Wilkerson (Parallelus) down in Huntsville, Alabama.						<a href="#">https://www.youtube.com/watch?v=EfTUpv…</a> <a href="#">@AndyInTheWild</a></p>
+								</blockquote>
+
+							</div>
+
+						</div><!-- // Container -->
+
+					</article><!-- // Tweet -->
+
+
+					<!-- Single Tweet -->
+					<article class="tweet">
+
+						<div class="container">
+
+							<div class="ten columns offset-by-three">
+
+								<!-- head of tweet -->
+								<header class="tweet__header">
+
+									<!-- Tweet author photo -->
+									<div class="tweet__avatar">
+										<img src="static/images/twitter_avatar.jpg" alt="" />
+									</div>
+
+									<!-- Tweet author name and nickname -->
+									<a href="#" class="tweet__author">John Doe<span class="tweet__nick">@johnydoesit</span></a>
+
+									<div class="tweet__separator">
+										<i class="fa fa-twitter"></i>
+									</div>
+
+								</header>
+
+								<blockquote class="tweet__content">
+									<p>New <a href="#">#EnvatoStories</a>: We meet Elite author Andy Wilkerson (Parallelus) down in Huntsville, Alabama. <a href="#">https://www.youtube.com/watch?v=EfTUpv…</a> <a href="#">@AndyInTheWild</a></p>
+								</blockquote>
+
+							</div>
+
+						</div><!-- // Container -->
+
+					</article><!-- // Tweet -->
+
+
+					<!-- Single Tweet -->
+					<article class="tweet">
+
+						<div class="container">
+
+							<div class="ten columns offset-by-three">
+
+								<!-- head of tweet -->
+								<header class="tweet__header">
+
+									<!-- Tweet author photo -->
+									<div class="tweet__avatar">
+										<img src="static/images/twitter_avatar.jpg" alt="" />
+									</div>
+
+									<!-- Tweet author name and nickname -->
+									<a href="#" class="tweet__author">John Doe<span class="tweet__nick">@johnydoesit</span></a>
+
+									<div class="tweet__separator">
+										<i class="fa fa-twitter"></i>
+									</div>
+
+								</header>
+
+								<blockquote class="tweet__content">
+									<p>New <a href="#">#EnvatoStories</a>: We meet Elite author Andy Wilkerson (Parallelus) down in Huntsville, Alabama. <a href="#">https://www.youtube.com/watch?v=EfTUpv…</a> <a href="#">@AndyInTheWild</a></p>
+								</blockquote>
+
+							</div>
+
+						</div><!-- / Container -->
+
+					</article><!-- / Tweet -->
+
+				</section><!-- / Twitter feed slider -->
+
+
+				<!-- Footer -->
+				<footer class="footer">
+
+					<!-- Widgets Container -->
+					<section class="footer__widgets">
+
+						<div class="container">
+
+							<!-- widget -->
+							<div class="eight columns">
+								<div class="footer__widget">
+									<img src="static/images/logo_w.png" alt="" style="margin-top: 40px;" />
+									<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos nulla varius volutpat.</p>
+								</div>
+							</div>
+
+							<!-- widget -->
+							<div class="eight columns">
+								<div class="footer__widget">
+									<h3 class="widget__title">Instagram</h3>
+									<ul class="widget__instagram">
+										<li><a href="#"><img src="static/images/insta1.jpg" alt="" /></a></li>
+										<li><a href="#"><img src="static/images/insta2.jpg" alt="" /></a></li>
+										<li><a href="#"><img src="static/images/insta3.jpg" alt="" /></a></li>
+										<li><a href="#"><img src="static/images/insta4.jpg" alt="" /></a></li>
+									</ul>
+								</div>
+							</div>
+
+						</div><!-- / Container -->
+
+					</section><!-- / Widgets Widgets -->
+
+					<!-- Bottom section of footer -->
+					<section class="footer__bottom">
+
+						<div class="container bordered">
+
+							<div class="eight columns">
+								
+								<!-- copyrights -->
+								<p class="copyrights">© 2014 Nevidethemes. All Rights Reserved</p>
+							</div>
+
+							<div class="eight columns">
+
+								<!-- Social Networks -->
+								<ul class="footer__socials">
+									<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+									<li><a href="#"><i class="fa fa-behance"></i></a></li>
+									<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
+									<li><a href="#"><i class="fa fa-tumblr"></i></a></li>
+									<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+									<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+								</ul>
+
+							</div>
+
+						</div><!-- / Container -->
+
+					</section><!-- / Bottom footer -->
+
+				</footer><!-- / Footer -->
+
+			</div><!-- Content -->
+
+		</div><!-- Wrap -->
+
+	</div>
+
+
+<!-- End Document
+================================================== -->
+	<script src="static/js/min/jquery-1.11.1.min.js"></script>
+	<script src="static/js/min/jquery-scrolltofixed-min.js"></script>
+	<script src="static/js/min/classie.min.js"></script>
+	<!--<script src="static/js/min/owl.carousel.min.js"></script>-->
+	<script src="static/js/owl.carousel.js"></script>
+	<script src="static/js/min/retina.min.js"></script>
+	<script src="static/js/min/smoothscroll.min.js"></script>
+	<script src="static/js/min/mobile-menu.min.js"></script>
+	<script src="static/js/min/placeholdem.min.js"></script>
+	<script src="static/js/min/jquery.parallax-1.1.3.min.js"></script>
+	<script src="static/js/min/jquery.prettyembed.min.js"></script>
+	<script src="static/js/min/fitvids.min.js"></script>
+	<script src="static/js/min/jquery.skippr.min.js"></script>
+	<script src="static/js/min/jquery.swipebox.min.js"></script>
+	<script src="static/js/min/jquery.scrollme.min.js"></script>
+	<script src="static/js/min/main.min.js"></script>
+</body>
+</html>
