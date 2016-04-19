@@ -12,7 +12,7 @@
 	<!-- Basic Page Needs
   ================================================== -->
 	<meta charset="utf-8">
-	<title>Your Page Title Here :)</title>
+	<title>Like a Riot</title>
 	<meta name="description" content="">
 	<meta name="author" content="">
 
@@ -53,7 +53,7 @@
 						<input id="mobile-search" type="search" placeholder="Search...">
 					</div>
 					<ul class="mobile-menu__list">
-						<li class="submenu-link"><a class="arrow" href="index.html">Home</a>
+						<li class="submenu-link"><a class="arrow" href="/">Home</a>
 							<!-- Submenu-->
 							<ul>
 								<li><a href="index.html">Carousel</a></li>
@@ -136,65 +136,17 @@
 							<div class="sixteen columns">
 
 								<!-- Logo Link and Image -->
-								<a class="header__logo" href="index.html">
+								<a class="header__logo" href="/">
 									<!--<img src="static/images/header.jpg" alt="Vanilia - blogging wordpress theme." />-->
-									<img src="http://likeariot.com/wp-content/uploads/cropped-test2-1-1.jpg" alt="Vanilia - blogging wordpress theme." />
+									<img src="http://likeariot.com/wp-content/uploads/cropped-test2-1-1.jpg" alt="Vanilia - blogging wordpress theme."/>
 								</a>
 							</div>
 						</div>
 					</div>
 
-					<!-- Featured Posts Slider -->
-					<section class="slider">
-
-						<figure class="slider__item">
-							<img class="lazyOwl" data-src="http://likeariot.com/wp-content/uploads/1-58.jpg" src="http://likeariot.com/wp-content/uploads/1-58.jpg" alt="" />
-							<figcaption class="slide__caption">
-								<p>recipes</p>
-								<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
-								<a class="slider__button" href="#">read</a>
-							</figcaption>
-						</figure>
-
-						<figure class="slider__item">
-							<img class="lazyOwl" data-src="http://likeariot.com/wp-content/uploads/2-20.jpg" src="http://likeariot.com/wp-content/uploads/2-20.jpg" alt="" />
-							<figcaption class="slide__caption">
-								<p>recipes</p>
-								<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
-								<a class="slider__button" href="#">read</a>
-							</figcaption>
-						</figure>
-
-						<figure class="slider__item">
-							<img class="lazyOwl" data-src="http://likeariot.com/wp-content/uploads/1-26.png" src="http://likeariot.com/wp-content/uploads/1-26.png" alt="" />
-							<figcaption class="slide__caption">
-								<p>recipes</p>
-								<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
-								<a class="slider__button" href="#">read</a>
-							</figcaption>
-						</figure>
-
-						<!--
-						<figure class="slider__item">
-							<img class="lazyOwl" data-src="static/images/slider3.jpg" src="static/images/slider3.jpg" alt="" />
-							<figcaption class="slide__caption">
-								<p>recipes</p>
-								<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
-								<a class="slider__button" href="#">read</a>
-							</figcaption>
-						</figure>
-
-						<figure class="slider__item">
-							<img class="lazyOwl" data-src="static/images/slider2.jpg" src="static/images/slider2.jpg" alt="" />
-							<figcaption class="slide__caption">
-								<p>recipes</p>
-								<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
-								<a class="slider__button" href="#">read</a>
-							</figcaption>
-						</figure>
-						-->
-
-					</section>
+					{% if request.get_full_path == '/' %}
+						{% block featured %}{% endblock %}
+					{% endif %}
 
 					<!-- Navigation menu container -->
 					<div class="main-header__navigation" id="sticky">
@@ -204,7 +156,7 @@
 								<!-- Navigation List -->
 								<div class="table">
 									<ul class="navigation__list">
-										<li><a href="index.html">Home</a>
+										<li><a href="/">Home</a>
 											<!-- Submenu-->
 											<!--<ul>
 												<li><a href="index.html">Carousel</a></li>
@@ -307,33 +259,6 @@
 
 				</section><!-- / Main Content -->
 
-
-				<!-- Prev / Next Page -->
-				<section class="pagination">
-
-					<div class="container">
-
-						<div class="ten columns offset-by-three">
-
-							<!-- Prev -->
-							<a class="pagination__prev" href="#"><i class="fa fa-arrow-circle-left"></i> Older Posts</a>
-
-							<!-- Numbers -->
-							<ul class="pagination__numbers">
-								<li><a class="pagination--active" href="#">1</a></li>
-								<li><a href="#">2</a></li>
-								<li><a href="#">3</a></li>
-							</ul>
-
-							<!-- Next -->
-							<a class="pagination__next" href="#">Newer Posts <i class="fa fa-arrow-circle-right"></i> </a>
-
-						</div>
-
-					</div>
-
-				</section>
-
 				<!-- Twitter feed slider -->
 				<section class="twitter-feed">
 
@@ -356,7 +281,7 @@
 									<a href="#" class="tweet__author">John Doe<span class="tweet__nick">@johnydoesit</span></a>
 
 									<div class="tweet__separator">
-										<i class="fa fa-twitter"></i>
+										<i class="fa fa-heart"></i>
 									</div>
 
 								</header>
@@ -370,76 +295,6 @@
 						</div><!-- // Container -->
 
 					</article><!-- // Tweet -->
-
-
-					<!-- Single Tweet -->
-					<article class="tweet">
-
-						<div class="container">
-
-							<div class="ten columns offset-by-three">
-
-								<!-- head of tweet -->
-								<header class="tweet__header">
-
-									<!-- Tweet author photo -->
-									<div class="tweet__avatar">
-										<img src="static/images/twitter_avatar.jpg" alt="" />
-									</div>
-
-									<!-- Tweet author name and nickname -->
-									<a href="#" class="tweet__author">John Doe<span class="tweet__nick">@johnydoesit</span></a>
-
-									<div class="tweet__separator">
-										<i class="fa fa-twitter"></i>
-									</div>
-
-								</header>
-
-								<blockquote class="tweet__content">
-									<p>New <a href="#">#EnvatoStories</a>: We meet Elite author Andy Wilkerson (Parallelus) down in Huntsville, Alabama. <a href="#">https://www.youtube.com/watch?v=EfTUpv…</a> <a href="#">@AndyInTheWild</a></p>
-								</blockquote>
-
-							</div>
-
-						</div><!-- // Container -->
-
-					</article><!-- // Tweet -->
-
-
-					<!-- Single Tweet -->
-					<article class="tweet">
-
-						<div class="container">
-
-							<div class="ten columns offset-by-three">
-
-								<!-- head of tweet -->
-								<header class="tweet__header">
-
-									<!-- Tweet author photo -->
-									<div class="tweet__avatar">
-										<img src="static/images/twitter_avatar.jpg" alt="" />
-									</div>
-
-									<!-- Tweet author name and nickname -->
-									<a href="#" class="tweet__author">John Doe<span class="tweet__nick">@johnydoesit</span></a>
-
-									<div class="tweet__separator">
-										<i class="fa fa-twitter"></i>
-									</div>
-
-								</header>
-
-								<blockquote class="tweet__content">
-									<p>New <a href="#">#EnvatoStories</a>: We meet Elite author Andy Wilkerson (Parallelus) down in Huntsville, Alabama. <a href="#">https://www.youtube.com/watch?v=EfTUpv…</a> <a href="#">@AndyInTheWild</a></p>
-								</blockquote>
-
-							</div>
-
-						</div><!-- / Container -->
-
-					</article><!-- / Tweet -->
 
 				</section><!-- / Twitter feed slider -->
 
@@ -455,7 +310,7 @@
 							<!-- widget -->
 							<div class="eight columns">
 								<div class="footer__widget">
-									<img src="static/images/logo_w.png" alt="" style="margin-top: 40px;" />
+									<img src="http://likeariot.com/wp-content/uploads/cropped-test2-1-1.jpg" alt="" style="margin-top: 40px;" />
 									<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos nulla varius volutpat.</p>
 								</div>
 							</div>
