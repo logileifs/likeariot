@@ -63,3 +63,4 @@ target/
 
 # Development database
 dev.db
+dev*.db
