@@ -41,6 +41,40 @@
 {% endif %}
 {% endblock %}
 
+{% block featured %}
+<!-- Featured Posts Slider -->
+<section class="slider">
+
+	<figure class="slider__item">
+		<img class="lazyOwl" data-src="http://likeariot.com/wp-content/uploads/1-58.jpg" src="http://likeariot.com/wp-content/uploads/1-58.jpg" alt="" />
+		<figcaption class="slide__caption">
+			<p>recipes</p>
+			<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
+			<a class="slider__button" href="#">read</a>
+		</figcaption>
+	</figure>
+
+	<figure class="slider__item">
+		<img class="lazyOwl" data-src="http://likeariot.com/wp-content/uploads/2-20.jpg" src="http://likeariot.com/wp-content/uploads/2-20.jpg" alt="" />
+		<figcaption class="slide__caption">
+			<p>recipes</p>
+			<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
+			<a class="slider__button" href="#">read</a>
+		</figcaption>
+	</figure>
+
+	<figure class="slider__item">
+		<img class="lazyOwl" data-src="http://likeariot.com/wp-content/uploads/1-26.png" src="http://likeariot.com/wp-content/uploads/1-26.png" alt="" />
+		<figcaption class="slide__caption">
+			<p>recipes</p>
+			<a href="single.html"><h2>Delicious grilled skewers.</h2></a>
+			<a class="slider__button" href="#">read</a>
+		</figcaption>
+	</figure>
+
+</section>
+{% endblock %}
+
 {% block main %}
 
 {% if tag or category or year or month or author %}
@@ -73,7 +107,6 @@
 
 {% for blog_post in blog_posts.object_list %}
 	<article class="main-content__post scrollme">
-	<time class="post__time" datetime="blog_post.publish_date"><span class="time_large">{{blog_post.publish_date.day}}<sup>th</sup></span> {{ blog_post.publish_date|date:"F" }}</time>
 
 	{% block blog_post_list_post_title %}
 	{% editable blog_post.title %}
@@ -91,6 +124,26 @@
 	{# {% endblock %} #}
 	{% endif %}
 		
+	<time class="post__time" datetime="blog_post.publish_date">
+	{% with blog_post.publish_date.day as date_day %}
+	{% with date_day|stringformat:"i" as string_day %}
+	{% with string_day|slice:"-1:" as last %}
+	{% if string_day == '10' or string_day == '11' or string_day == '12' or string_day == '13' %}
+		<span class="time_large">{{blog_post.publish_date.day}}<sup>th</sup>
+	{% elif last == '1' %}
+		<span class="time_large">{{blog_post.publish_date.day}}<sup>st</sup>
+	{% elif last == '2' %}
+		<span class="time_large">{{blog_post.publish_date.day}}<sup>nd</sup>
+	{% elif last == '3' %}
+		<span class="time_large">{{blog_post.publish_date.day}}<sup>rd</sup>
+	{% else %}
+		<span class="time_large">{{blog_post.publish_date.day}}<sup>th</sup>
+	{% endif %}
+		</span> {{ blog_post.publish_date|date:"F" }}
+	{% endwith %}
+	{% endwith %}
+	{% endwith %}
+	</time>
 	
 	{% block blog_post_list_post_content %}
 	<div class="post__content">
@@ -98,7 +151,22 @@
 	{{ blog_post.description_from_content|safe }}
 	
 
-	<p class="post__meta">Posted by <a href="about.html">Lorene</a> in <a href="#">Story</a></p>
+	<p class="post__meta">
+	{# Posted by <a href="about.html">Lorene</a> in <a href="#">Story</a> #}
+	{# {% trans "Posted by" %}: #}
+	{# {% with blog_post.user as author %} #}
+	{# <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a> #}
+	{# {% endwith %} #}
+	{% with blog_post.categories.all as categories %}
+	{% if categories %}
+	{# {% trans "in" %} #}
+	<!--in-->
+	{% for category in categories %}
+	<a href="{% url "blog_post_list_category" category.slug %}">{{ category }}</a>{% if not forloop.last %}, {% endif %}
+	{% endfor %}
+	{% endif %}
+	{% endwith %}
+	</p>
 	</div>
 	<!-- Post header -->
 		<header class="post__header">
