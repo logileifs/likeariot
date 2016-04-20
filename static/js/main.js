@@ -1,29 +1,82 @@
 (function($) {
-    'use strict';
+	'use strict';
 
-    $(document).ready(function() {
+	$(document).ready(function() {
 
-    	/* Swipebox Lightbox Plugin
-    	==========================================*/
+		$('.owl-carousel').owlCarousel({
+			stagePadding: 50,
+			loop:false,
+			center:false,
+			lazyload:true,
+			margin:10,
+			nav:false,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:3
+				},
+				1000:{
+					items:3
+				}
+			}
+		});
+
+		$(".item").on("mouseover", function () {
+			$(this).find("figcaption").css("visibility", "visible");
+			$(this).find("p").css("visibility", "visible");
+			$(this).find("a").css("visibility", "visible");
+		});
+
+		$(".item").on("mouseleave", function() {
+			$(this).find("p").css("visibility", "hidden");
+			$(this).find("a").css("visibility", "hidden");
+		});
+
+		$("#header-search").on("focus", function() {
+			$('.main-header__search').addClass('change');
+			$("#header-search").css("color", "#FFB3B3");
+		});
+
+		$("#header-search").on("focusout", function() {
+			$('.main-header__search').removeClass('change');
+			$("#header-search").css("color", "black");
+		});
+
+		$("#header-search").on("mouseover", function() {
+			$('.main-header__search').addClass('change');
+			$("#header-search").css("color", "#FFB3B3");
+		});
+
+		$("#header-search").on("mouseleave", function() {
+			if ( !$("#header-search").is(':focus') ){
+				$('.main-header__search').removeClass('change');
+				$("#header-search").css("color", "black");
+			}
+		});
+
+		/* Swipebox Lightbox Plugin
+		==========================================*/
 		$( '.swipebox' ).swipebox();
 
 
-    	/* Sticky Header
-    	==========================================*/
+		/* Sticky Header
+		==========================================*/
 		$('#sticky').scrollToFixed();
 
 
-    	/* Animated Placeholders
-    	==========================================*/
+		/* Animated Placeholders
+		==========================================*/
 		Placeholdem( document.querySelectorAll( '[placeholder]' ) );
 
 
-    	/* OwlCarousel Homepage and similar posts 
-    	==========================================*/
+		/* OwlCarousel Homepage and similar posts 
+		==========================================*/
 		$(window).resize( function(){
 			$(".slider").owlCarousel({
 				items: 3,
-			    nav: false,
+				nav: false,
 				responsive: true,
 				lazyLoad: true,
 				autoPlay : 5000,
@@ -32,8 +85,8 @@
 		});
 		$(window).resize();
 		
-    	/* OwlCarousel Gallery Post
-    	==========================================*/
+		/* OwlCarousel Gallery Post
+		==========================================*/
 		$(".post__gallery").owlCarousel({
 
 			navigation : false,
@@ -51,7 +104,7 @@
 		});
 
 		/* OwlCarousel Twitter 
-    	==========================================*/
+		==========================================*/
 		$(".twitter-feed").owlCarousel({
 			paginationSpeed : 400,
 			singleItem: true,
@@ -60,10 +113,10 @@
 		});
 
 
-        $(".parallax-slider").skippr();
+		$(".parallax-slider").skippr();
 
-        $('.parallax-slider__slide').parallax("50%", 0.3);
-        $('.parallax-slider__slide h2').parallax("50%", 0.1);
+		$('.parallax-slider__slide').parallax("50%", 0.3);
+		$('.parallax-slider__slide h2').parallax("50%", 0.1);
 
 		/* Fade elements while scrolling
 		================================================= */
@@ -84,14 +137,14 @@
 
 
 		/* Search Input 
-    	==========================================*/
+		==========================================*/
 		$('#header-search').blur(function(){
-    		$('.main-header__search').removeClass("focus");
-    	}).focus(function() {		
-    	    $('.main-header__search').addClass("focus");
-    	});
+			$('.main-header__search').removeClass("focus");
+		}).focus(function() {		
+			$('.main-header__search').addClass("focus");
+		});
 
-    	$(function(){
+		$(function(){
 			var submenu = $('.submenu-link');
 			var submenuList = $('.mobile-menu__list ul');
 
@@ -109,7 +162,7 @@
 
 
 		/* Post Parallax and some maths to make it fullheight
-    	=====================================================*/
+		=====================================================*/
 		$('.post__image--fullwidth').parallax("50%", 0.4);
 
 
@@ -134,45 +187,45 @@
 		/* Nice looking Youtube Posts 
 		=============================================*/
 		$('.yt_container').prettyEmbed({
-		    previewSize: 'hd',           // use either this option...
-		    customPreviewImage: '',      // ...or this option
+			previewSize: 'hd',           // use either this option...
+			customPreviewImage: '',      // ...or this option
 
-		    // Embed controls
-		    showInfo: false,
-		    showControls: true,
-		    loop: false,
+			// Embed controls
+			showInfo: false,
+			showControls: true,
+			loop: false,
 
-		    colorScheme: 'dark',
-		    showRelated: false,
+			colorScheme: 'dark',
+			showRelated: false,
 
-		    useFitVids: true
+			useFitVids: true
 		});
 
 
 		/*	Toggle (FAQ)
 		/*----------------------------------------------------*/
 	 
-	    // Find the toggles and hide their content
-	    $('.toggle').each(function(){
-	        $(this).find('.toggle-content').hide();
-	    });
+		// Find the toggles and hide their content
+		$('.toggle').each(function(){
+			$(this).find('.toggle-content').hide();
+		});
 	 
-	    // When a toggle is clicked (activated) show their content
-	    $('.toggle a.toggle-trigger').click(function(){
-	        var el = $(this), parent = el.closest('.toggle');
+		// When a toggle is clicked (activated) show their content
+		$('.toggle a.toggle-trigger').click(function(){
+			var el = $(this), parent = el.closest('.toggle');
 	 
-	        if( el.hasClass('active') )
-	        {
-	            parent.find('.toggle-content').slideToggle();
-	            el.removeClass('active');
-	        }
-	        else
-	        {
-	            parent.find('.toggle-content').slideToggle();
-	            el.addClass('active');
-	        }
-	        return false;
-	    });
+			if( el.hasClass('active') )
+			{
+				parent.find('.toggle-content').slideToggle();
+				el.removeClass('active');
+			}
+			else
+			{
+				parent.find('.toggle-content').slideToggle();
+				el.addClass('active');
+			}
+			return false;
+		});
 	 
 
 
@@ -205,25 +258,25 @@
 		/*	Accordions with contents
 		/*----------------------------------------------------*/
 		$(function() {
-		    var accList = $('.accordion li p')
-		    var accLink = $('.accordion li a') 
+			var accList = $('.accordion li p')
+			var accLink = $('.accordion li a') 
 			var accExpanded = $('.expand')		
-		    
-		    accList.hide();
+			
+			accList.hide();
 			accExpanded.show();
-		    accLink.click(function(e) {
-		        e.preventDefault();
-		        if(!$(this).hasClass('active')) {
-		            accLink.removeClass('active');
-		            accList.filter(':visible').slideUp('normal');
-		            $(this).addClass('active').next().stop(true,true).slideDown('normal');
-		        } else {
-		            $(this).removeClass('active');
-		            $(this).next().stop(true,true).slideUp('normal');
-		        }
-		    });
+			accLink.click(function(e) {
+				e.preventDefault();
+				if(!$(this).hasClass('active')) {
+					accLink.removeClass('active');
+					accList.filter(':visible').slideUp('normal');
+					$(this).addClass('active').next().stop(true,true).slideDown('normal');
+				} else {
+					$(this).removeClass('active');
+					$(this).next().stop(true,true).slideUp('normal');
+				}
+			});
 		});
 
-    });
+	});
 
 } (jQuery));
