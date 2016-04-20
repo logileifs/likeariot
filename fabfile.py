@@ -264,10 +264,10 @@ def rsync_upload():
     Uploads the project with rsync excluding some files and folders.
     """
     excludes = ["*.pyc", "*.pyo", "*.db", ".DS_Store", ".coverage",
-                "local_settings.py", "/static", "/.git", "/.hg"]
+                "local_settings.py", "/.git", "/.hg"]
     local_dir = os.getcwd() + os.sep
     return rsync_project(remote_dir=env.proj_path, local_dir=local_dir,
-                         exclude=excludes)
+                         exclude=excludes, delete=False, extra_opts='--no-perms --no-owner --no-group')
 
 
 def vcs_upload():
