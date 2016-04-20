@@ -33,7 +33,13 @@ DATABASES = {
 ###################
 
 # Domains for public site
-ALLOWED_HOSTS = ["riot.blogi.cc", "107.170.2.39"]
+ALLOWED_HOSTS = [
+    "blogi.cc",
+    "riot.blogi.cc",
+    "107.170.2.39",
+    "logileifs.pw",
+    "riot.logileifs.pw"
+]
 
 # These settings are used by the default fabfile.py provided.
 # Check fabfile.py for defaults.
