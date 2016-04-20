@@ -442,7 +442,8 @@
 	=================================== */
 
 	.main-header__top {
-		background: #ced8ca;
+		/*background: #ced8ca;*/
+		background: #C3C9C7;
 		/*added by me*/
 		height: 45px;
 		margin-top: -4px;
@@ -460,32 +461,50 @@
 	#header-search {
 		display: inline-block;
 		background: transparent;
-		color: #fff;
+		/*color: #fff;*/
+		color: black;
 		border: none;
 		font-family: 'Merriweather', serif;
 		font-size: 0.85em;
-		min-width: 300px;
-		height: 45px;
-		padding: 0 15px;
-		margin-left: 10px;
+		/*min-width: 300px;*/
+		/*height: 45px;*/
+		height: 56px;
+		/*padding: 0 15px;
+		margin-left: 10px;*/
+	}
+
+	/*.main-header__search:hover {
+		color: #FFB3B3;
+	}*/
+
+	.main-header__search:hover:before {
+		color: #FFB3B3;
+	}
+
+	.main-header__search:focus:before {
+		color: #FFB3B3;
 	}
 
 	.main-header__search:before {
 		content: '\f002';
 		font-family: "FontAwesome";
-		color: #fff;
+		/*color: #fff;*/
+		color: black;
 		font-size: 1em;
 		display: inline-block;
 	}
 
-	#header-search:hover {
-		/*background: #333;*/
-		background: #FFB3B3;
+	.main-header__search.change:before {
+		color: #FFB3B3;
 	}
+
+	/*#header-search:hover {
+		color: #FFB3B3;
+	}*/
 
 	#header-search:focus {
 		/*background: #D75752;*/
-		background: #FFB3B3;
+		/*background: #FFB3B3;*/
 		border: none;
 		-webkit-appearance: none;
 		outline: none;
@@ -534,7 +553,8 @@
 	}
 	.main-header__social-links li a:hover {
 		/*background: #D75752;*/
-		background: #FFB3B3;
+		/*background: #FFB3B3;*/
+		background: #fff;
 		color: #fff;
 		transition: background 150ms;
 		-webkit-transition: background 150ms;
@@ -634,7 +654,10 @@
 
 	.navigation__list li a {
 		display: block;
-		padding: 20px;
+		padding-top: 20px;
+		padding-right: 10px;
+		padding-bottom: 20px;
+		padding-left: 10px;
 		color: #000;
 		
 		font-size: 0.9em;
@@ -662,7 +685,7 @@
 
 	.navigation__list li:hover,
 	.navigation__list li li:hover {
-		background-color: #D75752;
+		/*background-color: #D75752;*/
 	}
 
 	.navigation__list li:hover a {
@@ -717,7 +740,9 @@
 
 	.navigation__list li:hover > a{
 		/*background-color: #D75752;*/
-		background-color: #FFB3B3;
+		/*background-color: #FFB3B3;*/
+		background-color: #fff;
+		color: #FFB3B3;
 	}		
 
 	.navigation__list li:hover > .arrow:after{
@@ -874,6 +899,7 @@
 		-webkit-transform: translate3d(-25px,0,0) scale(1.01);
 		transform: translate3d(-25px,0,0) scale(1.01);
 		max-width: none;
+		/*margin-left: 40px;*/
 	}
 
 	.slider__item:hover img {
