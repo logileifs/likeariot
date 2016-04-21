@@ -40,8 +40,10 @@
 		});
 
 		$("#header-search").on("focusout", function() {
-			$('.main-header__search').removeClass('change');
-			$("#header-search").css("color", "black");
+			if ( !$("#header-search").is(':hover') ){
+				$('.main-header__search').removeClass('change');
+				$("#header-search").css("color", "black");
+			}
 		});
 
 		$("#header-search").on("mouseover", function() {
