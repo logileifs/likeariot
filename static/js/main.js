@@ -56,6 +56,16 @@
 			}
 		});
 
+		$('#search-input').on('mouseover', function() {
+			$('#header-search').css('color', '#FFB3B3');
+		});
+
+		$('#search-input').on('mouseleave', function() {
+			if ( !$("#header-search").is(':focus') ){
+				$('#header-search').css('color', 'black');
+			}
+		});
+
 		/* Swipebox Lightbox Plugin
 		==========================================*/
 		$( '.swipebox' ).swipebox();
