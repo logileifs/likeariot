@@ -20,6 +20,24 @@
 		margin-right: auto;
 	}
 
+	@font-face {
+		font-family: "Denigan";
+		src: url("../fonts/Denigan/663b312cfca213f58e09d5e28bf9b50f.eot"); /* IE9*/
+		src: url("../fonts/Denigan/663b312cfca213f58e09d5e28bf9b50f.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+		url("../fonts/Denigan/663b312cfca213f58e09d5e28bf9b50f.woff2") format("woff2"), /* chrome、firefox */
+		url("../fonts/Denigan/663b312cfca213f58e09d5e28bf9b50f.woff") format("woff"), /* chrome、firefox */
+		url("../fonts/Denigan/663b312cfca213f58e09d5e28bf9b50f.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+		url("../fonts/Denigan/663b312cfca213f58e09d5e28bf9b50f.svg#Denigan") format("svg"); /* iOS 4.1- */
+	}
+	@font-face {	
+		font-family: "Baskerville";
+		src: url("../fonts/Baskerville/f929174bda22c1821db22ab9760b082a.eot"); /* IE9*/
+		src: url("../fonts/Baskerville/f929174bda22c1821db22ab9760b082a.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+		url("../fonts/Baskerville/f929174bda22c1821db22ab9760b082a.woff2") format("woff2"), /* chrome、firefox */
+		url("../fonts/Baskerville/f929174bda22c1821db22ab9760b082a.woff") format("woff"), /* chrome、firefox */
+		url("../fonts/Baskerville/f929174bda22c1821db22ab9760b082a.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+		url("../fonts/Baskerville/f929174bda22c1821db22ab9760b082a.svg#Baskerville") format("svg"); /* iOS 4.1- */
+	}
 	/*
 		1. General Vanilia Styles
 	=================================== */
@@ -1134,7 +1152,7 @@
 	=================================== */
 
 	.main-content__post {
-		margin-top: 150px;
+		margin-top: 80px;
 	}
 
 	.main-content__post img {
@@ -1200,11 +1218,12 @@
 	}
 
 	.post__title {
-		font-size: 2.5em;
-		font-weight: 900;
-		letter-spacing: -0.045em;
+		font-size: 4.5em;
+		font-weight: 400;
+		letter-spacing: 0.05em;
 		text-align: center;
 		margin: 0.6em 0 0.4em 0;
+		font-family: 'Denigan';
 	}	
 
 	.post__title a {
@@ -1221,6 +1240,7 @@
 		width: 88%;
 		margin: 0 auto 2.4em;
 		text-align: justify;
+		font-family: 'Baskerville';
 	}
 
 	p.post__excerpt {
