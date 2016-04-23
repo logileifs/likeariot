@@ -629,7 +629,7 @@
 	}
 
 	.table {
-		display: table;   /* Allow centering navigation */
+		display: inline;   /* Allow centering navigation */
 		margin: 0 auto;
 	}
 
