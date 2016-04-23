@@ -20,6 +20,14 @@
 		margin-right: auto;
 	}
 
+	.left {
+		float: left;
+	}
+
+	.right {
+		float: right;
+	}
+
 	@font-face {
 		font-family: "Denigan";
 		src: url("../fonts/Denigan/663b312cfca213f58e09d5e28bf9b50f.eot"); /* IE9*/
