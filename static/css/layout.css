@@ -13,6 +13,79 @@
 	/*
 		0. Added by Logi
 	=================================== */	
+	.wrapper {
+		display: table;
+		table-layout: fixed;
+		
+		width:100%;
+		/*height:100px;*/
+		/*background-color:Gray;*/
+	}
+	.wrapper div {
+		display: table-cell;
+		/*height:100px;*/
+	}
+	.flex-container {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		-ms-box-orient: horizontal;
+		display: -webkit-box;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: -moz-flex;
+		display: -webkit-flex;
+		display: flex;
+	}
+	.center {
+		-webkit-justify-content: center;
+		justify-content: center;
+	}
+	.flex-start {
+		-webkit-justify-content: flex-start;
+		justify-content: flex-start;
+	}
+	.flex-end {
+		-webkit-justify-content: flex-end;
+		justify-content: flex-end;
+	}
+	div.nav {
+		width:100%;
+		margin:0 auto;
+		padding:0;
+		/*list-style:none;*/
+		text-align:center;
+	}
+	.ltable {
+		display:inline-block;
+		width:33%;
+		margin:0;
+		padding:0;
+	}
+	/*.nav li { 
+		display:inline-block;
+		width:33%;
+		margin:0;
+		padding:0;
+	}*/
+	/*.nav a {
+		text-align:center;
+		padding:12px 0 13px 0;
+		margin:0;
+		border-left: 1px solid #fff;
+		border-right: 1px solid #fff;
+		display:block;
+	}*/
+	/*.nav a:hover { 
+		border:none;
+	}*/
+
+	/*div.nav li:first-child a{
+		border:none;
+	}
+	div.nav li:last-child a {
+		border:none;
+	}*/
 
 	.center-block {
 		display: block;
@@ -590,8 +663,8 @@
 		/*background: #D75752;*/
 		background: #FFB3B3;
 		color: #fff;
-	    -webkit-animation: zoomIn 500ms; /* Chrome, Safari, Opera */ 
-	    animation: zoomIn 500ms;
+		-webkit-animation: zoomIn 500ms; /* Chrome, Safari, Opera */ 
+		animation: zoomIn 500ms;
 	}
 
 /* 
@@ -602,7 +675,7 @@
 		0% {
 		opacity: 0;
 		-webkit-transform: scale3d(.3, .3, .3);
-		        transform: scale3d(.3, .3, .3);
+				transform: scale3d(.3, .3, .3);
 		}
 
 		50% {
@@ -614,7 +687,7 @@
 		0% {
 		opacity: 0;
 		-webkit-transform: scale3d(.3, .3, .3);
-		        transform: scale3d(.3, .3, .3);
+				transform: scale3d(.3, .3, .3);
 		}
 
 		50% {
@@ -659,7 +732,7 @@
 */
 
 	.navigation__list {
-		display: block;
+		/*display: block;*/
 		margin: 0 auto;
 		width: 100%;
 		padding: 0;
@@ -672,8 +745,8 @@
 		float: left;
 		display: inline-block;
 
-		box-shadow: inset 0 -1px 0 0 #EEE;
-		-webkit-box-shadow: inset 0 -1px 0 0 #EEE;
+		/*box-shadow: inset 0 -1px 0 0 #EEE;
+		-webkit-box-shadow: inset 0 -1px 0 0 #EEE;*/
 
 		transition: background-color 250ms ease-in-out;
 		-webkit-transition: background-color 250ms ease-in-out; 
@@ -864,8 +937,8 @@
 	}
 
 	.slide__caption:hover h2 {
-	    -webkit-animation: bounceUpHead 500ms ease-out; /* Chrome, Safari, Opera */ 
-	    animation: bounceUpHead 500ms ease-out;
+		-webkit-animation: bounceUpHead 500ms ease-out; /* Chrome, Safari, Opera */ 
+		animation: bounceUpHead 500ms ease-out;
 
 		transform: translateY(-50px);
 		-webkit-transform: translateY(-50px);
@@ -873,8 +946,8 @@
 	}
 
 	.slide__caption:hover p {
-	    -webkit-animation: bounceUpP 500ms ease-out; /* Chrome, Safari, Opera */ 
-	    animation: bounceUpP 500ms ease-out;
+		-webkit-animation: bounceUpP 500ms ease-out; /* Chrome, Safari, Opera */ 
+		animation: bounceUpP 500ms ease-out;
 
 		transform: translateY(-50px);
 		-webkit-transform: translateY(-50px);
@@ -1597,10 +1670,14 @@
 
 	.footer__widget p {
 		text-align: center;
-		padding: 10px 40px;
+		/*padding: 10px 40px;*/
 		color: #fff;
 		font-weight: 300;
 		font-size: 0.9em;
+		padding-top: 0px;
+		padding-right: 40px;
+		padding-bottom: 0px;
+		padding-left: 40px;
 	}
 
 	.footer__widget img {
@@ -1625,7 +1702,9 @@
 	}
 
 	.footer__socials {
-		float: right;
+		/*float: right;*/
+		text-align: center;
+		padding-left: 0px;
 	}
 
 	.footer__socials li {
@@ -1644,19 +1723,23 @@
 
 	.footer__socials li a:hover i {
 		color: #fff;
-	    -webkit-animation: zoomIn 500ms; /* Chrome, Safari, Opera */ 
-	    animation: zoomIn 500ms;
+		-webkit-animation: zoomIn 500ms; /* Chrome, Safari, Opera */ 
+		animation: zoomIn 500ms;
 	}
 
 	.widget__instagram {
 		padding: 0;
 		margin: 0 auto;
-		width: 220px;
+		width: 100%;
 		overflow: hidden;
+		columns: 3;
+		column-gap: 0px;
+		-webkit-columns: 3;
+		-moz-columns: 3;
 	}
 
 	.widget__instagram li {
-		width: 100px;
+		width: 145px;
 		display: inline-block;
 		margin: 5px;
 		float: left;
@@ -1668,6 +1751,20 @@
 		display: block;
 		border-radius: 5px;
 		-webkit-border-radius: 5px;
+	}
+
+	.mail {
+		font-size: 1.25em;
+	}
+
+	.location {
+		text-indent: -1em;
+	}
+
+	.location::before {
+		content: '\f041';
+		position: absolute;
+		font-family: "FontAwesome";
 	}
 
 	/*
@@ -2329,7 +2426,7 @@
 	}
 
 	#tabs li {
-	    display: inline;
+		display: inline;
 	}
 
 	#tabs li a {
@@ -2550,7 +2647,7 @@
 	}
 
 	.close {
-	 	font-size: 20px;
+		font-size: 20px;
 		font-weight: bold;
 		cursor: pointer;
 		display: block;
@@ -2707,8 +2804,8 @@
 		}
 
 		.slide__caption:hover h2 {
-		    -webkit-animation: none; /* Chrome, Safari, Opera */ 
-		    animation: none;
+			-webkit-animation: none; /* Chrome, Safari, Opera */ 
+			animation: none;
 
 			transform:none;
 			-webkit-transform: none;
@@ -2716,8 +2813,8 @@
 		}
 
 		.slide__caption:hover p {
-		    -webkit-animation: none;
-		    animation: none;
+			-webkit-animation: none;
+			animation: none;
 
 			transform:  none;
 			-webkit-transform:  none;
@@ -2750,11 +2847,42 @@
 	Tablet Portrait size to standard 960 (devices and browsers) 
 */
 
-@media only screen and (min-width: 768px) and (max-width: 959px) {
-
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
 		.slide__caption h2 {
 			font-weight: 700;
 			font-size: 1em;
+		}
+
+		.main__container, 
+		.content-wrap {
+			overflow: hidden;
+			width: 100%;
+			height: 100%;
+		}
+
+		.mobile-menu__wrap a {
+			color: #474747;
+			font-size: 1.1em;
+			font-weight: 900;
+		}
+
+		.mobile-menu__wrap a:hover,
+		.mobile-menu__wrap a:focus {
+			color: #D75752;
+		}
+
+		.mobile-menu__search {
+			display: block;
+		}
+
+		.mobile-menu__wrap,
+		.menu-button {
+			display: block;
+		}
+
+		.main-header__top,
+		.main-header__navigation {
+			display: none;
 		}
 
 	}
@@ -2764,7 +2892,6 @@
 */
 
 @media only screen and (max-width: 767px) {
-		
 		body {
 			font-size: 0.9em;
 		}
