@@ -1657,7 +1657,7 @@
 	}
 
 	.footer__widgets {
-		padding: 80px 0;
+		padding-top: 80px;
 		display: block;
 		overflow: hidden;
 	}
@@ -1687,9 +1687,12 @@
 
 	.footer__bottom {
 		width: 100%;
+		padding-top: 80px;
+		padding-bottom: 1px;
 	}
 
 	.bordered {
+		width: 100%;
 		border-top: 1px solid #222222;
 	}
 
@@ -1739,7 +1742,7 @@
 	}
 
 	.widget__instagram li {
-		width: 145px;
+		width: 140px;
 		display: inline-block;
 		margin: 5px;
 		float: left;
@@ -3046,6 +3049,24 @@
 		.footer__socials {
 			float: none;
 			text-align: center;
+		}
+
+		.widget__instagram {
+			padding: 0;
+			margin: 0 auto;
+			width: 75%;
+			overflow: hidden;
+			columns: 3;
+			column-gap: 0px;
+			-webkit-columns: 3;
+			-moz-columns: 3;
+		}
+
+		.widget__instagram li {
+			width: 60px;
+			display: inline-block;
+			margin: 5px;
+			float: left;
 		}
 
 	}
