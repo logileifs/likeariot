@@ -68,6 +68,25 @@
 			}
 		});
 
+		$('#disclaimer').on({"click": function() {
+			var tooltipText = "All items/clothes marked with an asterisk (*) are sponsored or affiliate links. All sponsored posts and links are marked with the tag ’sponsored‘ and/or the name of the customer/agency.";
+			if ($('#tooltip').length == 0){
+				$('#footer').prepend('<div id="tooltip">' + tooltipText  + '</div>');
+				$( "#tooltip" ).position({
+					of: event,
+					my: "center, bottom-75",
+					collision: "fit"
+				});
+			}
+			else {
+				$('#tooltip').remove();
+			}
+		},"mouseout": function() {
+			$('#tooltip').remove();	
+			}
+		});
+
+
 		/* Swipebox Lightbox Plugin
 		==========================================*/
 		$( '.swipebox' ).swipebox();

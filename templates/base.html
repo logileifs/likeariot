@@ -54,11 +54,11 @@
 					</div>
 					<ul class="mobile-menu__list">
 						<li><a href="/">Home</a></li>
-						<li><a href="/">About</a></li>
-						<li><a href="#">Fashion</a></li>
-						<li><a href="#">Wanderlust</a></li>
-						<li><a href="">Lifestyle</a></li>
-						<li><a href="#">CLLCT</a></li>
+						<li><a href="/about">About</a></li>
+						<li><a href="/fashion">Fashion</a></li>
+						<li><a href="/wanderlust">Wanderlust</a></li>
+						<li><a href="/lifestyle">Lifestyle</a></li>
+						<li><a href="http://cllct.net">CLLCT</a></li>
 						<!--<li class="submenu-link"><a class="arrow" href="/">Home</a>-->
 							<!-- Submenu-->
 							<!--<ul>
@@ -143,13 +143,13 @@
 
 								<!-- Logo Link and Image -->
 								<a class="header__logo" href="/">
-									<img src="static/images/Headerfinal.jpg" alt="Like a Riot - Fashion and Lifestyle blog."/>
+									<img src="{% static "images/Headerfinal.jpg" %}" alt="Like a Riot - Fashion and Lifestyle blog."/>
 								</a>
 							</div>
 						</div>
 					</div>
 
-					{% if request.get_full_path == '/' %}
+					{% if request.get_full_path == '/' or '/?page=' in request.get_full_path %}
 						{% block featured %}{% endblock %}
 					{% endif %}
 
@@ -168,11 +168,11 @@
 							<div id="center">
 								<ul class="navigation__list flex-container center">
 									<li><a href="/">Home</a></li>
-									<li><a href="/">About</a></li>
-									<li><a href="#">Fashion</a></li>
-									<li><a href="#">Wanderlust</a></li>
-									<li><a href="">Lifestyle</a></li>
-									<li><a href="#">CLLCT</a></li>
+									<li><a href="/about">About</a></li>
+									<li><a href="/fashion">Fashion</a></li>
+									<li><a href="/wanderlust">Wanderlust</a></li>
+									<li><a href="/lifestyle">Lifestyle</a></li>
+									<li><a href="http://cllct.net">CLLCT</a></li>
 								</ul>
 							</div>
 							<div id="right">
@@ -333,7 +333,7 @@
 
 									<!-- Tweet author photo -->
 									<div class="tweet__avatar">
-										<img src="static/images/twitter_avatar.jpg" alt="" />
+										<img src="{% static "images/twitter_avatar.jpg" %}" alt="" />
 									</div>
 
 									<!-- Tweet author name and nickname -->
@@ -359,7 +359,7 @@
 
 
 				<!-- Footer -->
-				<footer class="footer">
+				<footer id="footer" class="footer">
 
 					<!-- Widgets Container -->
 					<section class="footer__widgets">
@@ -369,7 +369,7 @@
 							<!-- widget -->
 							<div class="eight columns">
 								<div class="footer__widget">
-									<img src="static/images/footer1_4.png" alt="" />
+									<img src="{% static "images/footer1_4.png" %}" alt="" />
 									<p>For all business inquiries:</p>
 									<p><a class="mail" href="mailto:cooperations@likeariot.com">cooperations@likeariot.com</a></p>
 									<!-- Social Networks -->
@@ -418,18 +418,17 @@
 								<div class="footer__widget">
 									<h3 class="widget__title">Follow our journey on <span><br>Instagram</span></h3>
 									<ul class="widget__instagram">
-										<li><a href="#"><img src="static/images/insta1.jpg" alt="" /></a></li>
-										<li><a href="#"><img src="static/images/insta2.jpg" alt="" /></a></li>
-										<li><a href="#"><img src="static/images/insta3.jpg" alt="" /></a></li>
-										<li><a href="#"><img src="static/images/insta4.jpg" alt="" /></a></li>
-										<li><a href="#"><img src="static/images/insta4.jpg" alt="" /></a></li>
-										<li><a href="#"><img src="static/images/insta4.jpg" alt="" /></a></li>
+										<li><a href="#"><img src="{% static "images/insta1.jpg" %}" alt="" /></a></li>
+										<li><a href="#"><img src="{% static "images/insta1.jpg" %}" alt="" /></a></li>
+										<li><a href="#"><img src="{% static "images/insta1.jpg" %}" alt="" /></a></li>
+										<li><a href="#"><img src="{% static "images/insta1.jpg" %}" alt="" /></a></li>
+										<li><a href="#"><img src="{% static "images/insta1.jpg" %}" alt="" /></a></li>
+										<li><a href="#"><img src="{% static "images/insta1.jpg" %}" alt="" /></a></li>
 									</ul>
 									<p class="location">We are here: <span>Reykjavik Iceland</span></p>
 								</div>
 							</div>
 
-						<p class="copyrights">Made with <span class="fa fa-heart"></span> by <a href="http://logileifs.pw">logileifs</a>. All Rights Reserved</p>
 						</div><!-- / Container -->
 
 					</section><!-- / Widgets Widgets -->
@@ -440,19 +439,22 @@
 							<div class="wrapper">
 								<div class="left">
 									<!-- copyrights -->
-									<p class="copyrights">Fonts from <a href="http://www.onlinewebfonts.com"> oNline Web Fonts</a> licensed by CC BY 3.0</p>
+									<p class="copyrights para-left">Made with <span class="fa fa-heart"></span> by <a href="http://logileifs.pw">logileifs</a>. All Rights Reserved</p>
 								</div>
-								<div id="center">
+								<div class="center">
 									<!-- copyrights -->
-									<ul class="flex-container center">
+									<ul id="bottom-links" class="flex-container center">
 										<li><a href="">Imprint</a></li>
 										<li><a href="">DSE</a></li>
 										<li><a href="">Contact</a></li>
+										<li>
+											<a href="#disclaimer" id="disclaimer">Disclaimer</a>
+										</li>
 									</ul>
 								</div>
 								<div class="right">
 									<!-- copyrights -->
-									<p class="copyrights">Disclaimer bla bla bla...</p>
+									<p class="copyrights para-right">Fonts from <a href="http://www.onlinewebfonts.com"> oNline Web Fonts</a> licensed by CC BY 3.0</p>
 								</div>
 							</div>
 						</div>
@@ -485,22 +487,23 @@
 
 <!-- End Document
 ================================================== -->
-	<script src="static/js/min/jquery-1.11.1.min.js"></script>
-	<script src="static/js/min/jquery-scrolltofixed-min.js"></script>
-	<script src="static/js/min/classie.min.js"></script>
+	<script src="{% static "js/min/jquery-1.11.1.min.js" %}"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="{% static "js/min/jquery-scrolltofixed-min.js" %}"></script>
+	<script src="{% static "js/min/classie.min.js" %}"></script>
 	<!--<script src="static/js/min/owl.carousel.min.js"></script>-->
-	<script src="static/js/owl.carousel.js"></script>
-	<script src="static/js/min/retina.min.js"></script>
-	<script src="static/js/min/smoothscroll.min.js"></script>
-	<script src="static/js/min/mobile-menu.min.js"></script>
-	<script src="static/js/min/placeholdem.min.js"></script>
-	<script src="static/js/min/jquery.parallax-1.1.3.min.js"></script>
-	<script src="static/js/min/jquery.prettyembed.min.js"></script>
-	<script src="static/js/min/fitvids.min.js"></script>
-	<script src="static/js/min/jquery.skippr.min.js"></script>
-	<script src="static/js/min/jquery.swipebox.min.js"></script>
-	<script src="static/js/min/jquery.scrollme.min.js"></script>
-	<!--<script src="static/js/min/main.min.js"></script>-->
-	<script src="static/js/main.js"></script>
+	<script src="{% static "js/owl.carousel.js" %}"></script>
+	<script src="{% static "js/min/retina.min.js" %}"></script>
+	<script src="{% static "js/min/smoothscroll.min.js" %}"></script>
+	<script src="{% static "js/min/mobile-menu.min.js" %}"></script>
+	<script src="{% static "js/min/placeholdem.min.js" %}"></script>
+	<script src="{% static "js/min/jquery.parallax-1.1.3.min.js" %}"></script>
+	<script src="{% static "js/min/jquery.prettyembed.min.js" %}"></script>
+	<script src="{% static "js/min/fitvids.min.js" %}"></script>
+	<script src="{% static "js/min/jquery.skippr.min.js" %}"></script>
+	<script src="{% static "js/min/jquery.swipebox.min.js" %}"></script>
+	<script src="{% static "js/min/jquery.scrollme.min.js" %}"></script>
+	<!--<script src="static "js/min/main.min.js" %}"></script>-->
+	<script src="{% static "js/main.js" %}"></script>
 </body>
 </html>
