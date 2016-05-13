@@ -3,11 +3,13 @@
 
 	$(document).ready(function() {
 
-		$('.owl-carousel').owlCarousel({
+		var carousel = $('.owl-carousel');
+
+		carousel.owlCarousel({
 			stagePadding: 50,
 			loop:false,
-			center:false,
-			lazyload:true,
+			//center:false,
+			//lazyload:true,
 			margin:10,
 			nav:false,
 			responsive:{
@@ -17,11 +19,15 @@
 				600:{
 					items:3
 				},
-				1000:{
+				960:{
 					items:3
 				}
 			}
 		});
+
+		//carousel.trigger('owl.goTo', 1);
+		//var activeslide = document.getElementsByClassName('owl-item active')[1];
+		//activeslide.getElementsByTagName('a')[0].click();
 
 		$(".item").on("mouseover", function () {
 			$(this).find("figcaption").css("visibility", "visible");
@@ -104,7 +110,7 @@
 
 		/* OwlCarousel Homepage and similar posts 
 		==========================================*/
-		$(window).resize( function(){
+		/*$(window).resize( function(){
 			$(".slider").owlCarousel({
 				items: 3,
 				nav: false,
@@ -113,7 +119,7 @@
 				autoPlay : 5000,
 				stopOnHover: true,
 			});
-		});
+		});*/
 		$(window).resize();
 		
 		/* OwlCarousel Gallery Post

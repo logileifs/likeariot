@@ -1415,7 +1415,7 @@
 	.post__button:after {
 		content: '';
 		position: absolute;
-		top: 40px;
+		top: 22px;
 		height: 1px;
 		background: #eeeeee;
 		width: 38%;
@@ -1659,6 +1659,23 @@
 
 	.pagination__numbers li a.pagination--active {
 		color: #202020;
+	}
+
+	.pagination_text {
+		margin-bottom: -14px;
+		font-size: 0.85em;
+	}
+
+	.pagination_text.left {
+		margin-left: 13px;
+	}
+
+	.pagination_text.right {
+		margin-right: 5px;
+	}
+
+	.arrow_pag {
+		/*width: 48%;*/
 	}
 
 	/*
