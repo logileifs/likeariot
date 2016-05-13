@@ -38,7 +38,9 @@ ALLOWED_HOSTS = [
     "riot.blogi.cc",
     "107.170.2.39",
     "logileifs.pw",
-    "riot.logileifs.pw"
+    "riot.logileifs.pw",
+    "188.166.168.4",
+    "139.59.162.232"
 ]
 
 # These settings are used by the default fabfile.py provided.
