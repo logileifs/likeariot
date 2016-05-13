@@ -23,8 +23,14 @@
 			    <a href="?{{ page_var }}={{ page }}{% if querystring %}&{{ querystring }}{% endif %}">{{ page }}</a>
 			</li>
 			{% endfor %}
-			<li><input style="width: 60px;" placeholder="Jump to" type="text"></input></li>
-			<li><div class="btn">GO DO!</div></li>
+			<li>
+				<form>
+					<input style="width: 60px;" placeholder="Jump to" type="text" name="page">
+					<input class="btn godo" type="submit" value="GO DO!">
+				</form>
+			</li>
+			<!--<li><input style="width: 60px;" placeholder="Jump to" type="text"></input></li>-->
+			<!--<li><div class="btn">GO DO!</div></li>-->
 			<!--<li><a class="pagination--active" href="#">1</a></li>
 			<li><a href="#">2</a></li>
 			<li><a href="#">3</a></li>-->

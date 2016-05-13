@@ -1678,6 +1678,23 @@
 		/*width: 48%;*/
 	}
 
+	.godo {
+		padding-bottom: 5px;
+		padding-top: 5px;
+		font-size: 0.9em;
+		color: gray;
+		font-family: "Merriweather", serif;
+		font-weight: 600;
+		background: none;
+		border: none;
+	}
+
+	.godo:hover {
+		color: black;
+		background: white;
+		border: none;
+	}
+
 	/*
 		8. Twitter Feed
 	=================================== */
