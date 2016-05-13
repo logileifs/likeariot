@@ -136,12 +136,12 @@
 
 		/* OwlCarousel Twitter 
 		==========================================*/
-		$(".twitter-feed").owlCarousel({
+		/*$(".twitter-feed").owlCarousel({
 			paginationSpeed : 400,
 			singleItem: true,
 			autoPlay : 4000,
 			stopOnHover: true,
-		});
+		});*/
 
 
 		$(".parallax-slider").skippr();
