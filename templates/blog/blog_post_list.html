@@ -251,7 +251,10 @@
 {# {% endif %} #}
 
 	<div class="post__button">
-		<a class="btn" href="{{ blog_post.get_absolute_url }}">read more</a>
+		<a class="read_button" href="{{ blog_post.get_absolute_url }}">
+			<p>read entire story</p>
+			<img class="arrow1" src="{% static "images/arrow1.png" %}" />
+		</a>
 	</div>
 </article>
 <!--
