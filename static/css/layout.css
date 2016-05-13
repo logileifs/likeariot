@@ -21,10 +21,12 @@
 		/*height:100px;*/
 		/*background-color:Gray;*/
 	}
+	
 	.wrapper div {
 		display: table-cell;
 		/*height:100px;*/
 	}
+	
 	.flex-container {
 		padding: 0;
 		margin: 0;
@@ -37,18 +39,22 @@
 		display: -webkit-flex;
 		display: flex;
 	}
+	
 	.center {
 		-webkit-justify-content: center;
 		justify-content: center;
 	}
+	
 	.flex-start {
 		-webkit-justify-content: flex-start;
 		justify-content: flex-start;
 	}
+	
 	.flex-end {
 		-webkit-justify-content: flex-end;
 		justify-content: flex-end;
 	}
+	
 	div.nav {
 		width:100%;
 		margin:0 auto;
@@ -56,11 +62,30 @@
 		/*list-style:none;*/
 		text-align:center;
 	}
+	
 	.ltable {
 		display:inline-block;
 		width:33%;
 		margin:0;
 		padding:0;
+	}
+
+	#maedchenflohmarkt_widget {
+		overflow: hidden;
+		height: 400px;
+		width: 460px;
+	}
+
+	#happinesswhenshared {
+		margin-top: 50px;
+	}
+
+	.footer_links {
+		color: #FFB3B3;
+	}
+
+	.footer_links:hover {
+		color: white;
 	}
 	/*.nav li { 
 		display:inline-block;
@@ -87,16 +112,16 @@
 		border:none;
 	}*/
 	#targetElement {
-    height: 200px;
-    margin: 50px;
-    background: #9cf;
-  }
-  #tooltip {
-    position: absolute;
-    width: 300px;
-    height: 75px;
-    /*background: #080;*/
-  }
+		height: 200px;
+		margin: 50px;
+		background: #9cf;
+	}
+	
+	#tooltip {
+		position: absolute;
+		width: 300px;
+		height: 75px;
+	}
 
 	.center-block {
 		display: block;
@@ -1632,6 +1657,7 @@
 	}
 
 	.tweet__author {
+		text-align: center;
 		font-size: 1.2em;
 		font-weight: 900;
 		color: #202020;
