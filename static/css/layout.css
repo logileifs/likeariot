@@ -1881,13 +1881,14 @@
 		column-gap: 0px;
 		-webkit-columns: 3;
 		-moz-columns: 3;
+		-moz-column-gap: 0px;
 	}
 
 	.widget__instagram li {
 		width: 140px;
 		display: inline-block;
 		margin: 5px;
-		float: left;
+		/*float: left;*/
 	}
 
 	.widget__instagram img {
