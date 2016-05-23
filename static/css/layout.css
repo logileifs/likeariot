@@ -78,12 +78,26 @@
 
 	#maedchenflohmarkt_widget {
 		overflow: hidden;
-		height: 440px;
+		height: 393px;
 		width: 460px;
 	}
 
 	#happinesswhenshared {
 		margin-top: 50px;
+	}
+
+	#welovecontainer {
+		margin-top: 50px;
+	}
+
+	#welovelink {
+		display: block;
+		text-align: center;
+		margin-top: -30px;
+	}
+
+	#weloveimg {
+		width: 50%;
 	}
 
 	.footer_links {
@@ -92,6 +106,16 @@
 
 	.footer_links:hover {
 		color: white;
+	}
+
+	#instagram-name {
+		font-family: 'Magnolia';
+	}
+
+	#location-name {
+		font-family: 'Denigan';
+		font-size: 1.6em;
+		font-weight: 700;
 	}
 	/*.nav li { 
 		display:inline-block;
@@ -150,6 +174,10 @@
 	.para-left {
 		margin-left: 5px;
 		text-align: left;
+	}
+
+	#bottom-content {
+		margin-bottom: 50px;
 	}
 
 	#bottom-links li {
@@ -1465,6 +1493,8 @@
 
 	.read_button p {
 		margin-bottom: -20px;
+		font-family: 'Magnolia';
+		font-size: 1.1em;
 	}
 
 
@@ -1678,7 +1708,9 @@
 
 	.pagination_text {
 		margin-bottom: -14px;
-		font-size: 0.85em;
+		font-size: 1.2em;
+		font-weight: 600;
+		font-family: Denigan;
 	}
 
 	.pagination_text.left {
@@ -1702,6 +1734,7 @@
 		font-weight: 600;
 		background: none;
 		border: none;
+		margin-left: -12px;
 	}
 
 	.godo:hover {
@@ -1749,13 +1782,13 @@
 		font-style: normal;
 		color: #838383;
 		display: block;
-		margin-top: -10px;
+		margin-top: -15px;
 	}
 
 	.tweet__separator {
 		width: 100%;
 		position: relative;
-		margin-top: 25px;
+		margin-top: -15px;
 	}
 
 	.tweet__separator i {
