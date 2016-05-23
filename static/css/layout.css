@@ -78,7 +78,7 @@
 
 	#maedchenflohmarkt_widget {
 		overflow: hidden;
-		height: 400px;
+		height: 440px;
 		width: 460px;
 	}
 
@@ -178,6 +178,7 @@
 		url("../fonts/Denigan/663b312cfca213f58e09d5e28bf9b50f.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
 		url("../fonts/Denigan/663b312cfca213f58e09d5e28bf9b50f.svg#Denigan") format("svg"); /* iOS 4.1- */
 	}
+
 	@font-face {	
 		font-family: "Baskerville";
 		src: url("../fonts/Baskerville/f929174bda22c1821db22ab9760b082a.eot"); /* IE9*/
@@ -187,6 +188,14 @@
 		url("../fonts/Baskerville/f929174bda22c1821db22ab9760b082a.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
 		url("../fonts/Baskerville/f929174bda22c1821db22ab9760b082a.svg#Baskerville") format("svg"); /* iOS 4.1- */
 	}
+
+	@font-face {	
+		font-family: "Magnolia";
+		src:
+			url("../fonts/Magnolia/magnolia_sky.ttf") format("truetype"),
+			url("../fonts/Magnolia/magnolia_sky.otf") format("opentype");
+	}
+
 	/*
 		1. General Vanilia Styles
 	=================================== */
@@ -1724,20 +1733,23 @@
 	}
 
 	.tweet__author {
+		font-family: magnolia;
 		text-align: center;
-		font-size: 1.2em;
+		font-size: 1.5em;
 		font-weight: 900;
 		color: #202020;
 		display: block;
 		margin-top: 20px;
 	}
 
-	span.tweet__nick {
-		font-size: 0.8em;
-		font-weight: 400;
-		font-style: italic;
+	.tweet__nick {
+		font-family: 'Denigan';
+		font-size: 1.45em;
+		font-weight: 600;
+		font-style: normal;
 		color: #838383;
 		display: block;
+		margin-top: -10px;
 	}
 
 	.tweet__separator {
