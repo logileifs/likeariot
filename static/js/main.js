@@ -150,10 +150,10 @@
 		});*/
 
 
-		$(".parallax-slider").skippr();
+		//$(".parallax-slider").skippr();
 
-		$('.parallax-slider__slide').parallax("50%", 0.3);
-		$('.parallax-slider__slide h2').parallax("50%", 0.1);
+		//$('.parallax-slider__slide').parallax("50%", 0.3);
+		//$('.parallax-slider__slide h2').parallax("50%", 0.1);
 
 		/* Fade elements while scrolling
 		================================================= */
@@ -200,7 +200,7 @@
 
 		/* Post Parallax and some maths to make it fullheight
 		=====================================================*/
-		$('.post__image--fullwidth').parallax("50%", 0.4);
+		/*$('.post__image--fullwidth').parallax("50%", 0.4);
 
 
 		$(function(){
@@ -218,7 +218,7 @@
 				postImg.css('height',postImgHeight + 'px')
 			}
 
-		});
+		});*/
 
 
 		/* Nice looking Youtube Posts 

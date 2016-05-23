@@ -307,7 +307,7 @@
 		color: #fff;
 		border: 2px solid #D75752;
 		background: #D75752;
-		padding: 5px 15px;
+		/*padding: 5px 15px;*/
 		font-weight: 600;
 		transform: translateY(0);
 		-webkit-transform: translateY(0);
@@ -1635,7 +1635,8 @@
 
 	.pagination__prev,
 	.pagination__next  {
-		color: #D75752;
+		/*color: #D75752;*/
+		color: black;
 		width: 33.333%;
 		display: inline-block;
 		float: left;
@@ -1666,7 +1667,8 @@
 	}
 	.pagination__prev:hover,
 	.pagination__next:hover  {
-		color: #202020;
+		/*color: #202020;*/
+		color: pink;
 	}
 
 	.pagination__prev:hover i,
@@ -1699,7 +1701,8 @@
 	}
 
 	.pagination__numbers li a:hover {
-		color: #D75752;
+		/*color: #D75752;*/
+		color: pink;
 	}
 
 	.pagination__numbers li a.pagination--active {
@@ -1727,14 +1730,16 @@
 
 	.godo {
 		padding-bottom: 5px;
-		padding-top: 5px;
+		padding-top: 25px;
+		padding-left: 0px;
+		padding-right: 0px;
 		font-size: 0.9em;
 		color: gray;
 		font-family: "Merriweather", serif;
 		font-weight: 600;
 		background: none;
 		border: none;
-		margin-left: -12px;
+		margin-left: 2px;
 	}
 
 	.godo:hover {
