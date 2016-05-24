@@ -177,7 +177,7 @@
 	}
 
 	#bottom-content {
-		margin-bottom: 50px;
+		margin-bottom: 70px;
 	}
 
 	#bottom-links li {
@@ -190,7 +190,12 @@
 	}
 
 	#bottom-links li a:hover {
-		color: #D75752;
+		/*color: #D75752;*/
+		color: pink;
+	}
+
+	#mailp {
+		margin-top: -15px;
 	}
 
 	abbr {
@@ -1371,7 +1376,8 @@
 
 	.post__meta a {
 		/*color: #D75752;*/
-		color: #FFB3B3;
+		/*color: #FFB3B3;*/
+		color: gray;
 	}
 
 	.post__meta a:hover {
@@ -1484,7 +1490,7 @@
 		border: none;
 		width: 20%;
 		font-size: 0.9em;
-		color: gray;
+		color: pink;
 		font-weight: 600;
 		background: none;
 		margin: 0 auto;
@@ -1702,7 +1708,7 @@
 
 	.pagination__numbers li a:hover {
 		/*color: #D75752;*/
-		color: pink;
+		color: black;
 	}
 
 	.pagination__numbers li a.pagination--active {
@@ -1787,7 +1793,7 @@
 		font-style: normal;
 		color: #838383;
 		display: block;
-		margin-top: -15px;
+		margin-top: -30px;
 	}
 
 	.tweet__separator {
@@ -1841,14 +1847,14 @@
 	}
 
 	.footer__widgets {
-		padding-top: 80px;
+		padding-top: 20px;
 		display: block;
 		overflow: hidden;
 	}
 
 	h3.widget__title {
 		text-align: center;
-		font-weight: 900;
+		font-weight: normal;
 		color: #fff;
 	}
 
@@ -1871,7 +1877,7 @@
 
 	.footer__bottom {
 		width: 100%;
-		padding-top: 80px;
+		padding-top: 0px;
 		padding-bottom: 1px;
 	}
 
@@ -1900,6 +1906,7 @@
 		/*float: right;*/
 		text-align: center;
 		padding-left: 0px;
+		margin-top: -15px;
 	}
 
 	.footer__socials li {
