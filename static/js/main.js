@@ -314,6 +314,35 @@
 			});
 		});
 
+		$(function() {
+			var userId = '1528266078';
+			var accessToken = '1528266078.488ac6d.14b39af6e5634a13bc1a60029dc34234';
+			var instaUrl = "https://api.instagram.com/v1/users/"+userId+"/media/recent/?access_token="+accessToken;
+			$.ajax({
+				type: 'GET',
+				url: instaUrl,
+				dataType: 'jsonp',
+				contentType: 'text/plain',
+				xhrFields: {
+  					withCredentials: false
+				},
+				success: function(data, textStatus, xhr) {
+					var img1 = data.data[0].images.thumbnail.url;
+					var img2 = data.data[1].images.thumbnail.url;
+					var img3 = data.data[2].images.thumbnail.url;
+					var img4 = data.data[3].images.thumbnail.url;
+					var img5 = data.data[4].images.thumbnail.url;
+					var img6 = data.data[5].images.thumbnail.url;
+					$("#instapic1").attr("src", img1);
+					$("#instapic2").attr("src", img2);
+					$("#instapic3").attr("src", img3);
+					$("#instapic4").attr("src", img4);
+					$("#instapic5").attr("src", img5);
+					$("#instapic6").attr("src", img6);
+				},
+				error: function() {}
+			});
+		});
 	});
 
 } (jQuery));
