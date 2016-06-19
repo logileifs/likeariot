@@ -22,39 +22,60 @@
 {% endblock %}
 
 {% block main %}
-
-{% block blog_post_detail_postedby %}
-{% editable blog_post.publish_date %}
-<h6 class="post-meta">
-    {% trans "Posted by" %}:
-    {% with blog_post.user as author %}
-    <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>
-    {% endwith %}
-    {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}
-</h6>
-{% endeditable %}
-{% endblock %}
-{% block blog_post_detail_commentlink %}
-<p>
-    {% if blog_post.allow_comments %}
-        {% if settings.COMMENTS_DISQUS_SHORTNAME %}
-            (<a href="{{ blog_post.get_absolute_url }}#disqus_thread"
-                data-disqus-identifier="{% disqus_id_for blog_post %}">{% spaceless %}
-                {% trans "Comments" %}
-            {% endspaceless %}</a>)
-        {% else %}(<a href="#comments">{% spaceless %}
-            {% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}
-            {% endspaceless %}</a>)
-        {% endif %}
-    {% endif %}
-</p>
-{% endblock %}
+<h2 class="post__title">{{ blog_post.title }}</h2>
+{#{% block blog_post_detail_postedby %}#}
+{#{% editable blog_post.publish_date %}#}
+{#<h6 class="post-meta">#}
+{#    {% trans "Posted by" %}:#}
+{#    {% with blog_post.user as author %}#}
+{#}    <a href="{% url "blog_post_list_author" author %}">{{ author.get_full_name|default:author.username }}</a>#}
+{#   {% endwith %}#}
+{#    {% blocktrans with sometime=blog_post.publish_date|timesince %}{{ sometime }} ago{% endblocktrans %}#}
+{#</h6>#}
+{#{% endeditable %}#}
+{#{% endblock %}#}
+{#{% block blog_post_detail_commentlink %}#}
+{#<p>#}
+{#    {% if blog_post.allow_comments %}#}
+{#        {% if settings.COMMENTS_DISQUS_SHORTNAME %}#}
+{#            (<a href="{{ blog_post.get_absolute_url }}#disqus_thread"#}
+{#                data-disqus-identifier="{% disqus_id_for blog_post %}">{% spaceless %}#}
+{#                {% trans "Comments" %}#}
+{#            {% endspaceless %}</a>)#}
+{#        {% else %}(<a href="#comments">{% spaceless %}#}
+{#            {% blocktrans count comments_count=blog_post.comments_count %}{{ comments_count }} comment{% plural %}{{ comments_count }} comments{% endblocktrans %}#}
+{#            {% endspaceless %}</a>)#}
+{#        {% endif %}#}
+{#    {% endif %}#}
+{#</p>#}
+{#{% endblock %}#}
 
 {% block blog_post_detail_featured_image %}
 {% if settings.BLOG_USE_FEATURED_IMAGE and blog_post.featured_image %}
 <p><img class="img-responsive" src="{{ MEDIA_URL }}{% thumbnail blog_post.featured_image 600 0 %}"></p>
 {% endif %}
 {% endblock %}
+
+<time class="post__time" datetime="blog_post.publish_date">
+	{% with blog_post.publish_date.day as date_day %}
+	{% with date_day|stringformat:"i" as string_day %}
+	{% with string_day|slice:"-1:" as last %}
+	{% if string_day == '10' or string_day == '11' or string_day == '12' or string_day == '13' %}
+		<span class="time_large">{{blog_post.publish_date.day}}<sup>th</sup>
+	{% elif last == '1' %}
+		<span class="time_large">{{blog_post.publish_date.day}}<sup>st</sup>
+	{% elif last == '2' %}
+		<span class="time_large">{{blog_post.publish_date.day}}<sup>nd</sup>
+	{% elif last == '3' %}
+		<span class="time_large">{{blog_post.publish_date.day}}<sup>rd</sup>
+	{% else %}
+		<span class="time_large">{{blog_post.publish_date.day}}<sup>th</sup>
+	{% endif %}
+		</span> {{ blog_post.publish_date|date:"F" }}
+	{% endwith %}
+	{% endwith %}
+	{% endwith %}
+</time>
 
 {% if settings.COMMENTS_DISQUS_SHORTNAME %}
 {% include "generic/includes/disqus_counts.html" %}
@@ -71,25 +92,26 @@
 {% if tags %}
 {% spaceless %}
 <ul class="list-inline tags">
-    <li>{% trans "Tags" %}:</li>
-    {% for tag in tags %}
-    <li><a href="{% url "blog_post_list_tag" tag.slug %}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}</li>
-    {% endfor %}
+	<li>{% trans "Tags" %}:</li>
+	{% for tag in tags %}
+	<li><a href="{% url "blog_post_list_tag" tag.slug %}">{{ tag }}</a>{% if not forloop.last %}, {% endif %}</li>
+	{% endfor %}
 </ul>
 {% endspaceless %}
 {% endif %}
 {% endblock %}
 
-{% block blog_post_detail_rating %}
-<div class="panel panel-default rating">
-    <div class="panel-body">
-    {% rating_for blog_post %}
-    </div>
-</div>
-{% endblock %}
+{#{% block blog_post_detail_rating %}#}
+{#<div class="panel panel-default rating">#}
+{#    <div class="panel-body">#}
+{#    {% rating_for blog_post %}#}
+{#    </div>#}
+{#</div>#}
+{#{% endblock %}#}
 
 {% block blog_post_detail_sharebuttons %}
 {% set_short_url_for blog_post %}
+<h1>share buttons</h1>
 <a class="btn btn-sm share-twitter" target="_blank" href="http://twitter.com/home?status={{ blog_post.short_url|urlencode }}%20{{ blog_post.title|urlencode }}">{% trans "Share on Twitter" %}</a>
 <a class="btn btn-sm share-facebook" target="_blank" href="http://facebook.com/sharer.php?u={{ request.build_absolute_uri }}&amp;t={{ blog_post.title|urlencode }}">{% trans "Share on Facebook" %}</a>
 {% endblock %}
@@ -99,19 +121,37 @@
 {% with blog_post.get_previous_by_publish_date as previous %}
 {% if previous %}
 <li class="previous">
-    <a href="{{ previous.get_absolute_url }}">&larr; {{ previous }}</a>
+	<a href="{{ previous.get_absolute_url }}">&larr; {{ previous }}</a>
 </li>
 {% endif %}
 {% endwith %}
 {% with blog_post.get_next_by_publish_date as next %}
 {% if next %}
 <li class="next">
-    <a href="{{ next.get_absolute_url }}">{{ next }} &rarr;</a>
+	<a href="{{ next.get_absolute_url }}">{{ next }} &rarr;</a>
 </li>
 {% endif %}
 {% endwith %}
 </ul>
 {% endblock %}
+
+<!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script>
+(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement(s); js.id = id;
+	//js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1";
+	js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5"
+	//js.src = "//connect.facebook.net/en_GB/all.js";
+	fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<!-- Your share button code -->
+<div class="fb-share-button" data-href="{{blog_post.get_absolute_url}}" data-layout="button_count">
+</div>
 
 {% block blog_post_detail_related_posts %}
 {% if related_posts %}
@@ -119,7 +159,7 @@
 <h3>{% trans 'Related posts' %}</h3>
 <ul class="list-unstyled">
 {% for post in related_posts %}
-     <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+	 <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
 {% endfor %}
 </ul>
 </div>

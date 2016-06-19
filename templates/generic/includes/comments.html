@@ -1,29 +1,48 @@
 {% load i18n mezzanine_tags comment_tags %}
 <div id="comments">
-<h3>{% trans "Comments" %}</h3>
+{#<h3>{% trans "New Comment" %}</h3>#}
+<form method="post" id="comment" action="{{ comment_url }}#comment">
+	{% if not request.POST.replied_to %}
+		{#{% nevercache %}#}
+			{#<input type="hidden" name="referrer" value="{{ request.META.HTTP_REFERER }}">#}
+			{#{% csrf_token %}#}
+		{#{% endnevercache %}#}
+		<!--<div class="form-group input_id_name">
+    		<label class="control-label" for="id_name">Name</label>
+    		<input id="id_name" maxlength="50" name="name" type="text" value="Óli">
+			<p class="help-block">required</p>
+    	</div>
+    	<div class="form-group input_id_email">
+			<label class="control-label" for="id_email">Email</label>
+			<input id="id_email" name="email" type="email" value="oli@oli.com">
+			<p class="help-block">required (not published)</p>
+		</div>
+		<div class="form-group input_id_comment">
+			<label class="control-label" for="id_comment">Comment</label>
+			<textarea cols="40" id="id_comment" maxlength="3000" name="comment" rows="10"></textarea>
+		</div>-->
+		{% fields_for posted_comment_form %}
+	{#{% else %}#}
+		{#{% fields_for unposted_comment_form %}#}
+	{% endif %}
+	<div class="form-actions">
+		<input class="btn btn-primary btn-lg" type="submit" value="{% trans "Comment" %}">
+	</div>
+</form>
+<h3>{% trans "People said HI!" %}</h3>
 {% if settings.COMMENTS_DISQUS_SHORTNAME %}
 {% include "generic/includes/disqus_comments.html" %}
 {% else %}
 <script>
 $(function() {
-    $('.reply').click(function() {
-        $('.comment-reply-form').hide();
-        $(this).siblings('.comment-reply-form').toggle();
-    });
+	$('.reply').click(function() {
+		$('.comment-reply-form').hide();
+		$(this).siblings('.comment-reply-form').toggle();
+	});
 });
 </script>
 <style>.input_id_honeypot {display:none !important;}</style>
 {% comment_thread object_for_comments %}
-<h3>{% trans "New Comment" %}</h3>
-<form method="post" id="comment" action="{{ comment_url }}#comment">
-    {% if not request.POST.replied_to %}
-    {% fields_for posted_comment_form %}
-    {% else %}
-    {% fields_for unposted_comment_form %}
-    {% endif %}
-    <div class="form-actions">
-        <input class="btn btn-primary btn-lg" type="submit" value="{% trans "Comment" %}">
-    </div>
-</form>
+
 {% endif %}
 </div>

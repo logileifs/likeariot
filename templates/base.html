@@ -20,6 +20,12 @@
   ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
+	<meta property="og:url"           content="http://riot.blogi.cc" />
+	<meta property="og:type"          content="website" />
+	<meta property="og:title"         content="Like a Riot" />
+	<meta property="og:description"   content="Fashion and Lifestyle blog" />
+	<meta property="og:image"         content="http://riot.blogi.cc/static/images/Headerfinal.jpg" />
+
 	<!-- CSS
   ================================================== -->
 	<link rel="stylesheet" type='text/css' href="{% static "css/reset.css" %}">
@@ -38,6 +44,9 @@
 	<!-- Favicons
 	================================================== -->
 	<link rel="shortcut icon" href="static/images/favicon.ico">
+
+	<!-- jQuery so embedded script will not fail -->
+	<script src="{% static "js/min/jquery-1.11.1.min.js" %}"></script>
 
 </head>
 <body>
@@ -436,8 +445,7 @@
 <!-- End Document
 ================================================== -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	<script src="js/main.js"></script> <!-- Gem jQuery -->
-	<script src="{% static "js/min/jquery-1.11.1.min.js" %}"></script>
+	<!--<script src="{% static "js/min/jquery-1.11.1.min.js" %}"></script>-->
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
 	<script src="{% static "js/min/jquery-scrolltofixed-min.js" %}"></script>
 	<script src="{% static "js/min/classie.min.js" %}"></script>
