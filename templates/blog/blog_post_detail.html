@@ -113,7 +113,7 @@
 {% set_short_url_for blog_post %}
 <h1>share buttons</h1>
 <a class="btn btn-sm share-twitter" target="_blank" href="http://twitter.com/home?status={{ blog_post.short_url|urlencode }}%20{{ blog_post.title|urlencode }}">{% trans "Share on Twitter" %}</a>
-<a class="btn btn-sm share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?sdk=joey&amp;u={{ request.build_absolute_uri }}&amp;t={{ blog_post.title|urlencode }}&amp;display=popup&amp;src=share_button">{% trans "Share on Facebook" %}</a>
+<a class="btn btn-sm share-facebook" target="_blank" href="https://facebook.com/sharer/sharer.php?sdk=joey&amp;u={{ request.build_absolute_uri }}&amp;t={{ blog_post.title|urlencode }}&amp;display=popup&amp;ref=plugin&amp;src=share_button">{% trans "Share on Facebook" %}</a>
 <!--https://www.facebook.com/sharer/sharer.php?sdk=joey&u=http%3A%2F%2Friot.blogi.cc%2Fblog%2Fmisty-mountain%2F&display=popup&ref=plugin&src=share_button-->
 {% endblock %}
 
