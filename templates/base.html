@@ -48,6 +48,24 @@
 	<!-- jQuery so embedded script will not fail -->
 	<script src="{% static "js/min/jquery-1.11.1.min.js" %}"></script>
 
+	<script>
+		window.fbAsyncInit = function() {
+			FB.init({
+				appId		: '261323924229538',
+				xfbml		: true,
+				version		: 'v2.6'
+			});
+		};
+
+		(function(d, s, id){
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) {return;}
+			js = d.createElement(s); js.id = id;
+			js.src = "//connect.facebook.net/en_US/sdk.js";
+			fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+	</script>
+
 </head>
 <body>
 
@@ -269,7 +287,7 @@
 				<section id="bottom-content">
 					<div class="container">
 						
-						<div class="eight columns" id="happinesswhenshared">
+						<div class="sixteen columns" id="happinesswhenshared">
 							<article class="tweet">
 
 									<div>
@@ -302,13 +320,12 @@
 
 							</article><!-- // Tweet -->
 						</div>
-						<div class="eight columns" id="welovecontainer">
+						<div class="sixteen columns" id="welovecontainer">
 							<a href="https://www.maedchenflohmarkt.de/kleiderschrank/73931/likeariot-1279" id="welovelink">
 								<img src="{% static "images/welove.jpg" %}" id="weloveimg">
-								<iframe src="https://www.maedchenflohmarkt.de/widget/73931" id="maedchenflohmarkt_widget" frameborder="0" style="border:1px solid #e9e9e9;"></iframe>
+								<iframe src="https://www.maedchenflohmarkt.de/widget/73931" id="maedchenflohmarkt_widget" frameborder="0" scrolling="yes" style="border:1px solid #e9e9e9;"></iframe>
 							</a>
 						</div>
-
 					</div>
 				</section>
 

@@ -78,12 +78,22 @@
 
 	#maedchenflohmarkt_widget {
 		overflow: hidden;
-		height: 393px;
-		width: 460px;
+		height: 448px;
+		width: 100%;
 	}
 
 	#happinesswhenshared {
 		margin-top: 50px;
+	}
+
+	#happinesswhenshared:after{
+		content: '';
+		/*position: absolute;*/
+		top: 16px;
+		height: 1px;
+		background: #eeeeee;
+		width: 100%;
+		display: block;
 	}
 
 	#welovecontainer {
@@ -97,7 +107,7 @@
 	}
 
 	#weloveimg {
-		width: 50%;
+		width: 40%;
 	}
 
 	.footer_links {
@@ -1774,6 +1784,9 @@
 	.tweet__avatar img {
 		border-radius: 50%;
 		-webkit-border-radius: 50%;
+		max-width: none;
+		width: 200%;
+		margin-left: -60px;
 	}
 
 	.tweet__author {
@@ -1837,6 +1850,9 @@
 		line-height: 1.6em;
 	}
 
+	.tweet__content p {
+		font-size: 1.1em;
+	}
 
 	/*
 		8. Footer
