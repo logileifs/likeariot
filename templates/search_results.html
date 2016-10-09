@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% load i18n mezzanine_tags %}
+{% load i18n mezzanine_tags static %}
 
 {% block meta_title %}{% trans "Search Results" %}{% endblock %}
 {% block title %}{% trans "Search Results" %}{% endblock %}
@@ -10,7 +10,7 @@
 
 {% block breadcrumb_menu %}
 <li>
-    <a href="{% url "home" %}">{% trans "Home" %}</a>
+	<a href="{% url "home" %}">{% trans "Home" %}</a>
 </li>
 <li class="active">{% trans "Search Results" %}</li>
 {% endblock %}
@@ -30,24 +30,33 @@ Showing {{ start }} to {{ end }} of {{ total }} results in {{ search_type }} mat
 </p>
 
 <div id="search-results">
-{% for result in results.object_list %}
-{% with result.get_absolute_url as result_url %}
-    <h5>
-        {{ forloop.counter0|add:results.start_index }})
-        {% if result_url %}
-            <a href="{{ result_url }}">{{ result }}</a>
-        {% else %}
-            {{ result }}
-        {% endif %}
-    </h5>
-    {% if result.description != result|stringformat:"s" %}
-        <p>{{ result.description|truncatewords_html:20|safe }}</p>
-    {% endif %}
-    {% if result_url %}
-        <a href="{{ result_url }}">{% trans "read more" %}</a>
-    {% endif %}
-{% endwith %}
-{% endfor %}
+	<div class="flex-grid-thirds" style="flex-flow: row wrap; display: flex; justify-content: space-between;">
+		{% for result in results.object_list %}
+			{% with result.get_absolute_url as result_url %}
+				<div class="col" style="width: 32%;">
+					{# {{ forloop.counter0|add:results.start_index }}) #}
+					{% if result_url %}
+							<img style="max-height: 200px; height: 100%; width: 90%; overflow: hidden;" class="center-block" src="{{ result.featured_image.url }}"/>
+							<a href="{{ result_url }}"><p style="text-align: center;">{{ result }}</p></a>
+					{% else %}
+						{{ result }}
+					{% endif %}
+					{# {% if result.description != result|stringformat:"s" %} #}
+					{#	<p>{{ result.description|truncatewords_html:20|safe }}</p> #}
+					{# {% endif %} #}
+					{% if result_url %}
+						<div class="post__button">
+							<a class="read_button" href="{{ result_url }}">
+								<p>read entire story</p>
+								<img class="arrow1" src="{% static "images/arrow1.png" %}" />
+							</a>
+						<!--<a href="{{ result_url }}">{% trans "read more" %}</a>-->
+						</div>
+					{% endif %}
+				</div>
+			{% endwith %}
+		{% endfor %}
+	</div>
 </div>
 
 {% pagination_for results %}
