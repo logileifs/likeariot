@@ -25,10 +25,10 @@ items = channel.findall('item')
 for item in items:
 	content = items[0].find('{http://purl.org/rss/1.0/modules/content/}encoded')
 	#text = content.text
-	print('content.text: %s' % content.text)
+	#print('content.text: %s' % content.text)
 	new_text = re.sub('<!--:en-->[\s\S]*?<!--:-->', '', content.text)
 	content.text = et.CDATA(new_text)
-	print('new.text: %s' % new_text)
+	#print('new.text: %s' % new_text)
 
 tree.write('output.xml', encoding='utf-8', xml_declaration=True)
 #etree.dump(french_tree)
