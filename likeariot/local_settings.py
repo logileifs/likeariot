@@ -40,7 +40,10 @@ ALLOWED_HOSTS = [
     "logileifs.pw",
     "riot.logileifs.pw",
     "188.166.168.4",
-    "139.59.162.232"
+    "139.59.162.232",
+    "139.59.190.55",
+    "178.62.5.141",
+    "178.62.69.30"
 ]
 
 # These settings are used by the default fabfile.py provided.
@@ -62,7 +65,7 @@ ALLOWED_HOSTS = [
 FABRIC = {
  "DEPLOY_TOOL": "rsync",  # Deploy with "git", "hg", or "rsync"
  "SSH_USER": "riot",  # VPS SSH username
- "HOSTS": ["107.170.2.39"],  # The IP address of your VPS
+ "HOSTS": ["178.62.69.30"],  # The IP address of your VPS
  "DOMAINS": ALLOWED_HOSTS,  # Edit domains in ALLOWED_HOSTS
  "REQUIREMENTS_PATH": "requirements.txt",  # Project's pip requirements
  "LOCALE": "en_US.UTF-8",  # Should end with ".UTF-8"
