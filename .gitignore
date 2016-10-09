@@ -64,3 +64,4 @@ target/
 # Development database
 dev.db
 dev*.db
+static/media/*
